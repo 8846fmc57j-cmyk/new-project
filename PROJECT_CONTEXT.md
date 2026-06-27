@@ -44,6 +44,7 @@ The most important MVP screens are:
 - Use `Server/mock_api.py` as the temporary local backend for MVP integration.
 - Keep the Web prototype as a fast flow and API test surface.
 - Move toward a Cocos Creator WeChat Mini Game project under `Client/wechat-minigame/`.
+- The Cocos scaffold now lives under `Client/wechat-minigame/`.
 - Do not commit `error.log`; it is local runtime noise.
 
 ## Important Files
@@ -58,6 +59,8 @@ The most important MVP screens are:
 - `Config/json/`: generated runtime configuration.
 - `Server/mock_api.py`: local MVP Mock API.
 - `Client/web-prototype/`: browser prototype.
+- `Client/wechat-minigame/`: formal Cocos Creator WeChat Mini Game scaffold.
+- `Client/wechat-minigame/docs/api-mapping.md`: Mock API to Cocos service mapping.
 - `Tools/run_mvp_demo.py`: one-command local demo launcher.
 - `task_plan.md`, `progress.md`, `findings.md`: working memory and session log.
 
@@ -87,12 +90,12 @@ For docs-only changes, `git diff --check` is usually enough.
 
 ## Next Recommended Step
 
-Start the formal Cocos/WeChat Mini Game scaffold:
+Start the first Cocos implementation pass:
 
-1. Create `Client/wechat-minigame/`.
-2. Add README and directory structure for scenes, scripts, config, state, UI,
-   gameplay, resources, sprites, Spine animations, and audio.
-3. Map the existing Mock API endpoints to future Cocos services.
+1. Create the Cocos Creator project locally using the `Client/wechat-minigame/`
+   folder as the target structure.
+2. Create Boot, Home, Appraisal, and Battle scenes inside Cocos Creator.
+3. Port API/state contracts from `Client/wechat-minigame/docs/api-mapping.md`.
 4. Keep the Web prototype as the comparison baseline until the Cocos version can
    run the same MVP loop.
 

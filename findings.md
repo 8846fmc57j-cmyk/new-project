@@ -29,3 +29,5 @@
 - Web prototype smoke testing should verify both static assets and API state transitions because either side can break the demo.
 - Formal client should be Cocos Creator WeChat Mini Game with 2.5D scene presentation; the current Web prototype remains a validation surface.
 - `PROJECT_CONTEXT.md` is the durable project memory file and should be read before continuing future development after chat compression.
+- `Client/wechat-minigame/` is the formal client scaffold; Cocos Creator should generate actual `.scene` assets when the project is opened.
+- The first Cocos implementation pass should port API/state contracts before adding 2.5D art polish.

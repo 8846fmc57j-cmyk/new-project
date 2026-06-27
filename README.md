@@ -12,6 +12,8 @@
 - [MVP 客户端界面与接口对接文档](docs/mvp-client-screen-flow.md)
 - [MVP 研发任务清单](docs/mvp-development-backlog.md)
 - [微信小游戏 2.5D 技术方案](docs/wechat-minigame-2.5d-tech-plan.md)
+- [Cocos 微信小游戏客户端骨架](Client/wechat-minigame/README.md)
+- [Cocos 客户端接口映射](Client/wechat-minigame/docs/api-mapping.md)
 
 ## 配置导出
 
@@ -76,3 +78,4 @@ python3 -m http.server 8080
 - 已创建一键启动脚本 `Tools/run_mvp_demo.py`，用于同时启动 Mock API 和 Web 原型。
 - 已创建 Web 原型冒烟测试 `Tools/test_web_prototype.py`，用于检查静态页面、配置路径和核心 API 联通。
 - 已确定正式客户端方向为 Cocos Creator 微信小游戏 2.5D，并补充对应技术方案。
+- 已创建 `Client/wechat-minigame/` 正式客户端骨架和 Mock API 到 Cocos 服务层的迁移映射。

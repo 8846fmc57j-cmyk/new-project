@@ -53,3 +53,6 @@
 - Added `docs/wechat-minigame-2.5d-tech-plan.md` and updated main docs/backlog to prefer Cocos Creator for the formal client.
 - Starting persistent project context update so future compressed sessions can resume without relying on chat history.
 - Added `PROJECT_CONTEXT.md` and linked it from `README.md`.
+- Starting formal Cocos Creator WeChat Mini Game scaffold.
+- Added `Client/wechat-minigame/` with planned scene, script, resource, and documentation structure.
+- Added Mock API to Cocos service mapping in `Client/wechat-minigame/docs/api-mapping.md`.
