@@ -41,3 +41,5 @@
 - Added Mock API endpoints `/equipment/equip` and `/realm/breakthrough`, plus Web prototype panels for wearing starter armor and breaking through to `realm_02`.
 - Fixed Web prototype button state restoration so buttons return to their rule-based enabled/disabled state after API calls.
 - Verified with Playwright: equip raises power from 120 to 132, battle grants 300 spirit stones, and breakthrough changes realm to `realm_02` with 212 power.
+- Starting server-side main quest completion checks.
+- Added quest target validation in Mock API so main quest rewards can only be claimed after the matching action is completed.

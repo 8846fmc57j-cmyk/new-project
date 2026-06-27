@@ -64,6 +64,13 @@ def default_player(user_id: str) -> dict[str, object]:
         "completed_quests": [],
         "completed_tutorials": [],
         "cleared_stages": [],
+        "progress": {
+            "dig_count": 0,
+            "appraise_antique": 0,
+            "equip_item": 0,
+            "claim_offline_reward": 0,
+            "complete_daily": 0,
+        },
         "assets": {
             "spirit_stone": 0,
             "jade": 0,
@@ -135,6 +142,7 @@ def player_summary(player: dict[str, object]) -> dict[str, object]:
         "equipment": player["equipment"],
         "equipped": player["equipped"],
         "antiques": player["antiques"],
+        "quest_status": current_quest_status(player),
     }
 
 
@@ -144,6 +152,36 @@ def equipment_power_bonus(template: dict[str, str]) -> int:
     if attr_type == "hp":
         return amount // 10
     return amount
+
+
+def current_quest_status(player: dict[str, object]) -> dict[str, object]:
+    quest_id = str(player["main_quest_id"])
+    quest = QUESTS.get(quest_id)
+    if not quest:
+        return {"quest_id": quest_id, "claimable": False, "reason": "NO_ACTIVE_QUEST"}
+    return {
+        "quest_id": quest_id,
+        "target": quest["target"],
+        "claimable": is_target_complete(player, quest["target"]),
+    }
+
+
+def is_target_complete(player: dict[str, object], target: str) -> bool:
+    if target == "none":
+        return True
+    target_type, value = target.split(":", 1)
+    progress: dict[str, int] = player["progress"]  # type: ignore[assignment]
+    if target_type in {"dig_count", "obtain_antique", "appraise_antique", "equip_item", "claim_offline_reward", "complete_daily"}:
+        if target_type == "obtain_antique":
+            antiques: list[dict[str, object]] = player["antiques"]  # type: ignore[assignment]
+            return len(antiques) >= int(value)
+        return int(progress.get(target_type, 0)) >= int(value)
+    if target_type == "clear_stage":
+        cleared: list[str] = player["cleared_stages"]  # type: ignore[assignment]
+        return value in cleared
+    if target_type == "upgrade_realm":
+        return str(player["realm_id"]) == value
+    return False
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -189,6 +227,12 @@ class Handler(BaseHTTPRequestHandler):
             if not quest:
                 self.write_error(400, "QUEST_NOT_FOUND")
                 return
+            if quest_id != str(player["main_quest_id"]):
+                self.write_error(400, "QUEST_NOT_ACTIVE")
+                return
+            if not is_target_complete(player, quest["target"]):
+                self.write_error(400, "QUEST_TARGET_INCOMPLETE")
+                return
             rewards = parse_reward(quest["reward"])
             add_rewards(player, rewards)
             completed = player["completed_quests"]  # type: ignore[assignment]
@@ -230,6 +274,8 @@ class Handler(BaseHTTPRequestHandler):
                     player["power"] = int(player["power"]) - equipment_power_bonus(previous)
                 equipped[slot] = template_id
                 player["power"] = int(player["power"]) + equipment_power_bonus(template)
+            progress = player["progress"]  # type: ignore[assignment]
+            progress["equip_item"] = max(int(progress.get("equip_item", 0)), 1)
             self.write_json({"equipped": equipped, "power": player["power"]})
             return
 
@@ -262,6 +308,9 @@ class Handler(BaseHTTPRequestHandler):
             reward_amount = max(60, elapsed // 60 * 12)
             idle["last_claim_at"] = now()
             add_rewards(player, [{"item_id": "spirit_stone", "amount": reward_amount}])
+            progress = player["progress"]  # type: ignore[assignment]
+            progress["dig_count"] = int(progress.get("dig_count", 0)) + 1
+            progress["claim_offline_reward"] = int(progress.get("claim_offline_reward", 0)) + 1
             self.write_json({"duration": elapsed, "rewards": [{"item_id": "spirit_stone", "amount": reward_amount}]})
             return
 
@@ -275,6 +324,8 @@ class Handler(BaseHTTPRequestHandler):
             final_price = int(template["base_price"])
             antique["state"] = "appraised"
             antique["final_price"] = final_price
+            progress = player["progress"]  # type: ignore[assignment]
+            progress["appraise_antique"] = int(progress.get("appraise_antique", 0)) + 1
             self.write_json({"antique": antique, "result_type": "normal"})
             return
 

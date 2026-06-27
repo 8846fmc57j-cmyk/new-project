@@ -135,10 +135,13 @@ function render() {
   $("claimIdleButton").disabled = state.busy;
 
   const quest = findById("quests", player.main_quest_id);
+  const questStatus = player.quest_status || {};
   $("questTitle").textContent = quest ? labels[quest.name_key] || quest.name_key : "主线已完成";
-  $("questTarget").textContent = quest ? `目标 ${quest.target}，奖励 ${rewardText(quest.reward)}` : "进入自由循环";
-  $("claimQuestButton").textContent = quest ? "领取主线" : "主线完成";
-  $("claimQuestButton").disabled = state.busy || !quest;
+  $("questTarget").textContent = quest
+    ? `目标 ${quest.target}，奖励 ${rewardText(quest.reward)}，状态 ${questStatus.claimable ? "可领取" : "进行中"}`
+    : "进入自由循环";
+  $("claimQuestButton").textContent = questStatus.claimable ? "领取主线" : "继续目标";
+  $("claimQuestButton").disabled = state.busy || !quest || !questStatus.claimable;
 
   const tutorial = findById("tutorial_steps", player.tutorial_step_id);
   $("tutorialTitle").textContent = tutorial
