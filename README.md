@@ -48,7 +48,7 @@ python3 Server/mock_api.py
 python3 -m http.server 8080
 ```
 
-浏览器打开 `http://127.0.0.1:8080/Client/web-prototype/`，可体验游客登录、主界面、主线推进、新手引导、挂机领取、鉴宝估价、打怪结算、装备穿戴和境界突破。
+浏览器打开 `http://127.0.0.1:8080/Client/web-prototype/`，可体验游客登录、主界面、主线推进、新手引导、挂机领取、鉴宝估价、打怪结算、装备穿戴和境界突破。原型右上角的“重置 Demo”会调用本地 `/dev/reset`，用于反复测试流程。
 
 ## 当前阶段
 

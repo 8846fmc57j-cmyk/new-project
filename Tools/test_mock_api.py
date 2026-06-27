@@ -51,6 +51,8 @@ def main() -> None:
         wait_for_server()
         login = request("POST", "/auth/guest-login", {"device_id": "test_device"})
         assert login["user_id"] == "guest_001"
+        reset = request("POST", "/dev/reset", {})
+        assert reset["reset"] is True
         sync = request("GET", "/game/sync")
         assert sync["main_quest_id"] == "quest_main_001"
         assert sync["quest_status"]["claimable"] is False
@@ -78,6 +80,9 @@ def main() -> None:
         assert quest["next_quest_id"] == "quest_main_006"
         realm = request("POST", "/realm/breakthrough", {})
         assert realm["realm_id"] == "realm_02"
+        reset = request("POST", "/dev/reset", {})
+        assert reset["player"]["profile"]["realm_id"] == "realm_01"
+        assert reset["player"]["assets"]["spirit_stone"] == 0
         print("mock_api_smoke=ok")
     finally:
         proc.terminate()

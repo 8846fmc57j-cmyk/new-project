@@ -43,3 +43,5 @@
 - Verified with Playwright: equip raises power from 120 to 132, battle grants 300 spirit stones, and breakthrough changes realm to `realm_02` with 212 power.
 - Starting server-side main quest completion checks.
 - Added quest target validation in Mock API so main quest rewards can only be claimed after the matching action is completed.
+- Starting local prototype reset tooling.
+- Added `/dev/reset` and a Web prototype reset button so demo state can be restarted without restarting the Mock API.

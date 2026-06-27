@@ -70,6 +70,7 @@ function setBusy(isBusy) {
   state.busy = isBusy;
   const buttonIds = [
     "loginButton",
+    "resetButton",
     "claimQuestButton",
     "completeTutorialButton",
     "claimIdleButton",
@@ -113,6 +114,22 @@ function logAction(text) {
   $("activityLog").textContent = text;
 }
 
+async function resetDemo() {
+  try {
+    setBusy(true);
+    await api("POST", "/dev/reset", {});
+    state.selectedAntiqueUid = null;
+    state.player = await api("GET", "/game/sync");
+    setStatus("已重置");
+    logAction("Demo 存档已重置，可以重新测试完整流程。");
+    render();
+  } catch (error) {
+    setStatus(`重置失败 ${error.message}`, false);
+  } finally {
+    setBusy(false);
+  }
+}
+
 function render() {
   const player = state.player;
   if (!player) return;
@@ -126,6 +143,7 @@ function render() {
   $("spiritStone").textContent = player.assets.spirit_stone || 0;
   $("jade").textContent = player.assets.jade || 0;
   $("token").textContent = player.assets.appraisal_token || 0;
+  $("resetButton").disabled = state.busy;
 
   const map = findById("maps", player.profile.current_map_id);
   $("mapName").textContent = labels[player.profile.current_map_id] || player.profile.current_map_id;
@@ -376,6 +394,7 @@ async function animateBattle() {
 }
 
 $("loginButton").addEventListener("click", login);
+$("resetButton").addEventListener("click", resetDemo);
 $("claimIdleButton").addEventListener("click", claimIdle);
 $("claimQuestButton").addEventListener("click", claimQuest);
 $("completeTutorialButton").addEventListener("click", completeTutorial);

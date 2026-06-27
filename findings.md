@@ -24,3 +24,4 @@
 - `/game/sync` should include completed quests, completed tutorials, and cleared stages so the client can drive red dots and guide skipping.
 - Equipment and realm actions can stay deterministic in the Mock API; the value now is validating client flow, not final balance.
 - Quest claimability should come from the server summary so clients cannot accidentally grant rewards from UI state alone.
+- A local-only `/dev/reset` endpoint speeds up repeated demo validation and should not be treated as a production API.

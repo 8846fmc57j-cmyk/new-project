@@ -53,6 +53,10 @@ button:disabled {
   border-color: var(--green);
 }
 
+.ghost-action {
+  background: rgba(255, 255, 255, 0.72);
+}
+
 .app-shell {
   width: min(1180px, calc(100vw - 28px));
   margin: 0 auto;
@@ -76,6 +80,12 @@ button:disabled {
   min-height: 88px;
   padding: 18px 22px;
   border-radius: 8px;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 h1,

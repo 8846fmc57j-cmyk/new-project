@@ -34,5 +34,6 @@ Supported MVP endpoints:
 - `POST /antique/appraise`
 - `POST /battle/start`
 - `POST /battle/finish`
+- `POST /dev/reset`
 
-This server uses in-memory state and resets when restarted.
+This server uses in-memory state and resets when restarted. `POST /dev/reset` is only for local prototype testing.

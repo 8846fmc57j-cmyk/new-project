@@ -209,6 +209,13 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self) -> None:
         path = urlparse(self.path).path
         body = self.read_body()
+
+        if path == "/dev/reset":
+            user_id = str(body.get("user_id", "guest_001"))
+            STATE[user_id] = default_player(user_id)
+            self.write_json({"reset": True, "player": player_summary(STATE[user_id])})
+            return
+
         player = get_player(str(body.get("user_id", "guest_001")))
 
         if path == "/auth/guest-login":
