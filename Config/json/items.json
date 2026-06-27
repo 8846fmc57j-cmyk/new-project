@@ -1,0 +1,74 @@
+[
+  {
+    "id": "spirit_stone",
+    "name_key": "item_spirit_stone",
+    "type": "currency",
+    "quality": "common",
+    "stack_limit": "999999",
+    "use_effect": "none",
+    "sell_price": "0"
+  },
+  {
+    "id": "jade",
+    "name_key": "item_jade",
+    "type": "premium_currency",
+    "quality": "rare",
+    "stack_limit": "999999",
+    "use_effect": "none",
+    "sell_price": "0"
+  },
+  {
+    "id": "appraisal_token",
+    "name_key": "item_appraisal_token",
+    "type": "consumable",
+    "quality": "rare",
+    "stack_limit": "999",
+    "use_effect": "use_appraisal",
+    "sell_price": "20"
+  },
+  {
+    "id": "repair_stone_01",
+    "name_key": "item_repair_stone_01",
+    "type": "material",
+    "quality": "common",
+    "stack_limit": "999",
+    "use_effect": "repair_antique",
+    "sell_price": "5"
+  },
+  {
+    "id": "repair_stone_02",
+    "name_key": "item_repair_stone_02",
+    "type": "material",
+    "quality": "rare",
+    "stack_limit": "999",
+    "use_effect": "repair_antique",
+    "sell_price": "20"
+  },
+  {
+    "id": "forge_ore_01",
+    "name_key": "item_forge_ore_01",
+    "type": "material",
+    "quality": "common",
+    "stack_limit": "999",
+    "use_effect": "upgrade_equipment",
+    "sell_price": "4"
+  },
+  {
+    "id": "map_key_01",
+    "name_key": "item_map_key_01",
+    "type": "key",
+    "quality": "rare",
+    "stack_limit": "99",
+    "use_effect": "unlock_stage",
+    "sell_price": "50"
+  },
+  {
+    "id": "treasure_box_01",
+    "name_key": "item_treasure_box_01",
+    "type": "box",
+    "quality": "common",
+    "stack_limit": "99",
+    "use_effect": "open_drop_group:drop_box_01",
+    "sell_price": "30"
+  }
+]

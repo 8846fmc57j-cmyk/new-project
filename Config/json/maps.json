@@ -1,0 +1,52 @@
+[
+  {
+    "id": "map_01",
+    "name_key": "map_newbie_mine",
+    "order": "1",
+    "min_realm": "realm_01",
+    "base_reward_per_min": "12",
+    "drop_group_id": "drop_map_01",
+    "boss_stage_id": "stage_010",
+    "unlock_condition": "none"
+  },
+  {
+    "id": "map_02",
+    "name_key": "map_spirit_valley",
+    "order": "2",
+    "min_realm": "realm_02",
+    "base_reward_per_min": "22",
+    "drop_group_id": "drop_map_02",
+    "boss_stage_id": "stage_020",
+    "unlock_condition": "clear_stage:stage_010"
+  },
+  {
+    "id": "map_03",
+    "name_key": "map_ancient_ruins",
+    "order": "3",
+    "min_realm": "realm_04",
+    "base_reward_per_min": "40",
+    "drop_group_id": "drop_map_03",
+    "boss_stage_id": "stage_030",
+    "unlock_condition": "clear_stage:stage_020"
+  },
+  {
+    "id": "map_04",
+    "name_key": "map_underworld_secret",
+    "order": "4",
+    "min_realm": "realm_07",
+    "base_reward_per_min": "72",
+    "drop_group_id": "drop_map_04",
+    "boss_stage_id": "stage_040",
+    "unlock_condition": "clear_stage:stage_030"
+  },
+  {
+    "id": "map_05",
+    "name_key": "map_celestial_rift",
+    "order": "5",
+    "min_realm": "realm_10",
+    "base_reward_per_min": "120",
+    "drop_group_id": "drop_map_05",
+    "boss_stage_id": "stage_050",
+    "unlock_condition": "clear_stage:stage_040"
+  }
+]

@@ -7,3 +7,7 @@
 - Added first CSV templates for items, maps, drops, antiques, monsters, battle stages, equipment, and quests.
 - CSV validation found missing boss stage references for later maps; added placeholder boss stages and monsters through map 05.
 - CSV validation now passes across IDs, drop groups, monster rewards, map boss stages, and basic malformed-row checks.
+- Continuing with a small export tool that validates CSV files and generates JSON files plus a manifest.
+- Added `Tools/export_config.py`.
+- Generated JSON runtime configs under `Config/json/`.
+- Manifest contains row counts and SHA-256 hashes for each generated JSON file.

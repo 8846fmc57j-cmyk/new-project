@@ -1,0 +1,317 @@
+[
+  {
+    "group_id": "drop_map_01",
+    "item_id": "spirit_stone",
+    "weight": "6000",
+    "min_count": "8",
+    "max_count": "18",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_map_01",
+    "item_id": "forge_ore_01",
+    "weight": "1800",
+    "min_count": "1",
+    "max_count": "3",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_map_01",
+    "item_id": "appraisal_token",
+    "weight": "300",
+    "min_count": "1",
+    "max_count": "1",
+    "pity_rule_id": "pity_appraisal_20",
+    "daily_limit": "10"
+  },
+  {
+    "group_id": "drop_map_01",
+    "item_id": "antique_bronze_mirror_001",
+    "weight": "250",
+    "min_count": "1",
+    "max_count": "1",
+    "pity_rule_id": "pity_antique_15",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_map_02",
+    "item_id": "spirit_stone",
+    "weight": "5200",
+    "min_count": "18",
+    "max_count": "36",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_map_02",
+    "item_id": "repair_stone_01",
+    "weight": "1400",
+    "min_count": "1",
+    "max_count": "3",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_map_02",
+    "item_id": "antique_jade_cup_001",
+    "weight": "350",
+    "min_count": "1",
+    "max_count": "1",
+    "pity_rule_id": "pity_antique_12",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_map_03",
+    "item_id": "spirit_stone",
+    "weight": "4600",
+    "min_count": "32",
+    "max_count": "68",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_map_03",
+    "item_id": "repair_stone_02",
+    "weight": "1200",
+    "min_count": "1",
+    "max_count": "2",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_map_03",
+    "item_id": "antique_broken_sword_001",
+    "weight": "220",
+    "min_count": "1",
+    "max_count": "1",
+    "pity_rule_id": "pity_antique_10",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_box_01",
+    "item_id": "spirit_stone",
+    "weight": "6000",
+    "min_count": "50",
+    "max_count": "120",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_box_01",
+    "item_id": "appraisal_token",
+    "weight": "1500",
+    "min_count": "1",
+    "max_count": "2",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_box_01",
+    "item_id": "forge_ore_01",
+    "weight": "2500",
+    "min_count": "3",
+    "max_count": "6",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_map_04",
+    "item_id": "spirit_stone",
+    "weight": "4200",
+    "min_count": "60",
+    "max_count": "130",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_map_04",
+    "item_id": "repair_stone_02",
+    "weight": "1400",
+    "min_count": "1",
+    "max_count": "4",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_map_04",
+    "item_id": "antique_spirit_scroll_001",
+    "weight": "240",
+    "min_count": "1",
+    "max_count": "1",
+    "pity_rule_id": "pity_antique_10",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_map_05",
+    "item_id": "spirit_stone",
+    "weight": "3800",
+    "min_count": "110",
+    "max_count": "240",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_map_05",
+    "item_id": "repair_stone_02",
+    "weight": "1600",
+    "min_count": "2",
+    "max_count": "5",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_map_05",
+    "item_id": "antique_celestial_seal_001",
+    "weight": "120",
+    "min_count": "1",
+    "max_count": "1",
+    "pity_rule_id": "pity_antique_8",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_m01",
+    "item_id": "spirit_stone",
+    "weight": "7000",
+    "min_count": "20",
+    "max_count": "45",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_m01",
+    "item_id": "forge_ore_01",
+    "weight": "3000",
+    "min_count": "1",
+    "max_count": "2",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_e01",
+    "item_id": "spirit_stone",
+    "weight": "5000",
+    "min_count": "80",
+    "max_count": "160",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_e01",
+    "item_id": "appraisal_token",
+    "weight": "1500",
+    "min_count": "1",
+    "max_count": "1",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_b01",
+    "item_id": "spirit_stone",
+    "weight": "4000",
+    "min_count": "300",
+    "max_count": "600",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_b01",
+    "item_id": "antique_bronze_mirror_001",
+    "weight": "600",
+    "min_count": "1",
+    "max_count": "1",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_m02",
+    "item_id": "spirit_stone",
+    "weight": "6500",
+    "min_count": "60",
+    "max_count": "120",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_m02",
+    "item_id": "repair_stone_01",
+    "weight": "2500",
+    "min_count": "1",
+    "max_count": "3",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_b02",
+    "item_id": "spirit_stone",
+    "weight": "4000",
+    "min_count": "800",
+    "max_count": "1400",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_b02",
+    "item_id": "antique_jade_cup_001",
+    "weight": "500",
+    "min_count": "1",
+    "max_count": "1",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_b03",
+    "item_id": "spirit_stone",
+    "weight": "3800",
+    "min_count": "1600",
+    "max_count": "2800",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_b03",
+    "item_id": "antique_broken_sword_001",
+    "weight": "450",
+    "min_count": "1",
+    "max_count": "1",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_b04",
+    "item_id": "spirit_stone",
+    "weight": "3600",
+    "min_count": "3200",
+    "max_count": "5200",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_b04",
+    "item_id": "antique_spirit_scroll_001",
+    "weight": "350",
+    "min_count": "1",
+    "max_count": "1",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_b05",
+    "item_id": "spirit_stone",
+    "weight": "3400",
+    "min_count": "6000",
+    "max_count": "9000",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  },
+  {
+    "group_id": "drop_b05",
+    "item_id": "antique_celestial_seal_001",
+    "weight": "220",
+    "min_count": "1",
+    "max_count": "1",
+    "pity_rule_id": "none",
+    "daily_limit": "0"
+  }
+]

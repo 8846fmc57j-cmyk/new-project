@@ -1,0 +1,46 @@
+{
+  "version": "mvp-config-001",
+  "source": "Config/csv",
+  "files": [
+    {
+      "file": "antiques.json",
+      "rows": 6,
+      "sha256": "361c10e848172220b14ee5d2eb6d02a22c319b9cae99dd393fa7d8f8a584e23d"
+    },
+    {
+      "file": "battle_stages.json",
+      "rows": 9,
+      "sha256": "98d34d2201bddebfd7eb692d0d9187a246a0296a0922c6025144eee5051d4907"
+    },
+    {
+      "file": "drops.json",
+      "rows": 35,
+      "sha256": "c28b587228d3336a187184a7ae011488460bc09a93b68d2e180a5d3794b9e3e7"
+    },
+    {
+      "file": "equipment.json",
+      "rows": 6,
+      "sha256": "927fe6e74249259481d5ed9382a17eeb83276738b297f1a1479de048342fc641"
+    },
+    {
+      "file": "items.json",
+      "rows": 8,
+      "sha256": "1129f8b39c1554f8f785d0fee83b02153b4a69e2afe78dc9889c32e371dcd0fe"
+    },
+    {
+      "file": "maps.json",
+      "rows": 5,
+      "sha256": "e5a2ef31bedb320cdda542371859344171ccd8ed7dd3a8b5b83b95ea5b88b4f4"
+    },
+    {
+      "file": "monsters.json",
+      "rows": 9,
+      "sha256": "59d385546848c35c451aeccd270dec011700a17cf11b554944a364ef9803568e"
+    },
+    {
+      "file": "quests.json",
+      "rows": 8,
+      "sha256": "9e64b4537330bb0a8eaee9138400a674a47c3cade36fdbdab1351a9cf25b4e44"
+    }
+  ]
+}

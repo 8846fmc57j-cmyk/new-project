@@ -1,0 +1,62 @@
+[
+  {
+    "id": "weapon_iron_spade_001",
+    "name_key": "equip_iron_spade",
+    "slot": "weapon",
+    "quality": "common",
+    "level_req": "1",
+    "main_attr_pool": "atk:20",
+    "sub_attr_pool": "dig_speed|crit_drop",
+    "recycle_reward": "forge_ore_01:1"
+  },
+  {
+    "id": "weapon_spirit_pick_001",
+    "name_key": "equip_spirit_pick",
+    "slot": "weapon",
+    "quality": "rare",
+    "level_req": "3",
+    "main_attr_pool": "atk:55",
+    "sub_attr_pool": "dig_speed|hit|crit_rate",
+    "recycle_reward": "forge_ore_01:3"
+  },
+  {
+    "id": "armor_cloth_robe_001",
+    "name_key": "equip_cloth_robe",
+    "slot": "armor",
+    "quality": "common",
+    "level_req": "1",
+    "main_attr_pool": "hp:120",
+    "sub_attr_pool": "def|hp|control_resist",
+    "recycle_reward": "forge_ore_01:1"
+  },
+  {
+    "id": "armor_jade_robe_001",
+    "name_key": "equip_jade_robe",
+    "slot": "armor",
+    "quality": "epic",
+    "level_req": "6",
+    "main_attr_pool": "hp:520",
+    "sub_attr_pool": "def|hp|poison_resist",
+    "recycle_reward": "forge_ore_01:5"
+  },
+  {
+    "id": "ring_copper_001",
+    "name_key": "equip_copper_ring",
+    "slot": "ring",
+    "quality": "rare",
+    "level_req": "3",
+    "main_attr_pool": "atk:30",
+    "sub_attr_pool": "crit_rate|crit_drop|aura_bonus",
+    "recycle_reward": "forge_ore_01:2"
+  },
+  {
+    "id": "amulet_guard_001",
+    "name_key": "equip_guard_amulet",
+    "slot": "amulet",
+    "quality": "epic",
+    "level_req": "8",
+    "main_attr_pool": "def:75",
+    "sub_attr_pool": "hp|control_resist|magic_resist",
+    "recycle_reward": "forge_ore_01:5"
+  }
+]

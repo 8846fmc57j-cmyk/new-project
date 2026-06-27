@@ -14,6 +14,8 @@ Build the first MVP development assets for the idle treasure digging game:
 2. Add project folders and CSV configuration templates.
 3. Validate CSV formatting.
 4. Commit and sync changes to GitHub.
+5. Add CSV validation and JSON export tooling.
+6. Generate runtime JSON configuration files.
 
 ## Current Scope
 
@@ -33,3 +35,4 @@ Create first-pass configuration data for:
 - MVP does not include ad SDK or ad rewards.
 - Appraisal and combat are core MVP systems.
 - Config IDs use stable English identifiers; display text should go through localization keys.
+- CSV files are edited by planning/design; JSON files are generated runtime artifacts for client/server.

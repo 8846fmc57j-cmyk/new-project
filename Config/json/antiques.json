@@ -1,0 +1,62 @@
+[
+  {
+    "id": "antique_bronze_mirror_001",
+    "name_key": "antique_bronze_mirror",
+    "quality": "rare",
+    "base_price": "1200",
+    "collection_id": "col_bronze",
+    "repair_cost": "repair_stone_01:2",
+    "can_fake": "true",
+    "source_hint": "map_01"
+  },
+  {
+    "id": "antique_jade_cup_001",
+    "name_key": "antique_jade_cup",
+    "quality": "epic",
+    "base_price": "3600",
+    "collection_id": "col_jade",
+    "repair_cost": "repair_stone_01:4",
+    "can_fake": "true",
+    "source_hint": "map_02"
+  },
+  {
+    "id": "antique_broken_sword_001",
+    "name_key": "antique_broken_sword",
+    "quality": "legendary",
+    "base_price": "9800",
+    "collection_id": "col_weapon",
+    "repair_cost": "repair_stone_02:3",
+    "can_fake": "false",
+    "source_hint": "map_03"
+  },
+  {
+    "id": "antique_spirit_scroll_001",
+    "name_key": "antique_spirit_scroll",
+    "quality": "epic",
+    "base_price": "5200",
+    "collection_id": "col_scroll",
+    "repair_cost": "repair_stone_02:2",
+    "can_fake": "false",
+    "source_hint": "map_03"
+  },
+  {
+    "id": "antique_fake_coin_001",
+    "name_key": "antique_fake_coin",
+    "quality": "common",
+    "base_price": "180",
+    "collection_id": "col_misc",
+    "repair_cost": "none",
+    "can_fake": "true",
+    "source_hint": "map_01"
+  },
+  {
+    "id": "antique_celestial_seal_001",
+    "name_key": "antique_celestial_seal",
+    "quality": "mythic",
+    "base_price": "32000",
+    "collection_id": "col_celestial",
+    "repair_cost": "repair_stone_02:8",
+    "can_fake": "false",
+    "source_hint": "map_05"
+  }
+]

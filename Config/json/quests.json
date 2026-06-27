@@ -1,0 +1,66 @@
+[
+  {
+    "id": "quest_main_001",
+    "type": "main",
+    "name_key": "quest_first_dig",
+    "target": "dig_count:1",
+    "reward": "spirit_stone:100",
+    "next_quest_id": "quest_main_002"
+  },
+  {
+    "id": "quest_main_002",
+    "type": "main",
+    "name_key": "quest_first_antique",
+    "target": "obtain_antique:1",
+    "reward": "appraisal_token:1",
+    "next_quest_id": "quest_main_003"
+  },
+  {
+    "id": "quest_main_003",
+    "type": "main",
+    "name_key": "quest_first_appraisal",
+    "target": "appraise_antique:1",
+    "reward": "spirit_stone:300",
+    "next_quest_id": "quest_main_004"
+  },
+  {
+    "id": "quest_main_004",
+    "type": "main",
+    "name_key": "quest_first_equip",
+    "target": "equip_item:1",
+    "reward": "forge_ore_01:3",
+    "next_quest_id": "quest_main_005"
+  },
+  {
+    "id": "quest_main_005",
+    "type": "main",
+    "name_key": "quest_first_battle",
+    "target": "clear_stage:stage_001",
+    "reward": "spirit_stone:500",
+    "next_quest_id": "quest_main_006"
+  },
+  {
+    "id": "quest_main_006",
+    "type": "main",
+    "name_key": "quest_first_realm",
+    "target": "upgrade_realm:realm_02",
+    "reward": "appraisal_token:1",
+    "next_quest_id": "quest_main_007"
+  },
+  {
+    "id": "quest_daily_001",
+    "type": "daily",
+    "name_key": "quest_daily_dig",
+    "target": "dig_count:10",
+    "reward": "spirit_stone:300",
+    "next_quest_id": "none"
+  },
+  {
+    "id": "quest_daily_002",
+    "type": "daily",
+    "name_key": "quest_daily_battle",
+    "target": "clear_stage_count:3",
+    "reward": "forge_ore_01:5",
+    "next_quest_id": "none"
+  }
+]

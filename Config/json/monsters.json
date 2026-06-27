@@ -1,0 +1,101 @@
+[
+  {
+    "id": "monster_spirit_rat_001",
+    "name_key": "monster_spirit_rat",
+    "type": "normal",
+    "level": "1",
+    "hp": "120",
+    "atk": "18",
+    "def": "4",
+    "traits": "none",
+    "reward_group_id": "drop_m01"
+  },
+  {
+    "id": "monster_mine_imp_001",
+    "name_key": "monster_mine_imp",
+    "type": "normal",
+    "level": "3",
+    "hp": "260",
+    "atk": "32",
+    "def": "9",
+    "traits": "high_evasion",
+    "reward_group_id": "drop_m01"
+  },
+  {
+    "id": "monster_ruin_guard_001",
+    "name_key": "monster_ruin_guard",
+    "type": "elite",
+    "level": "5",
+    "hp": "850",
+    "atk": "95",
+    "def": "30",
+    "traits": "physical_resist",
+    "reward_group_id": "drop_e01"
+  },
+  {
+    "id": "boss_mine_spirit_001",
+    "name_key": "boss_mine_spirit",
+    "type": "boss",
+    "level": "10",
+    "hp": "3200",
+    "atk": "220",
+    "def": "80",
+    "traits": "burst|poison",
+    "reward_group_id": "drop_b01"
+  },
+  {
+    "id": "monster_valley_wolf_001",
+    "name_key": "monster_valley_wolf",
+    "type": "normal",
+    "level": "12",
+    "hp": "4200",
+    "atk": "260",
+    "def": "110",
+    "traits": "burst",
+    "reward_group_id": "drop_m02"
+  },
+  {
+    "id": "boss_valley_keeper_001",
+    "name_key": "boss_valley_keeper",
+    "type": "boss",
+    "level": "20",
+    "hp": "12800",
+    "atk": "720",
+    "def": "360",
+    "traits": "magic_resist|control",
+    "reward_group_id": "drop_b02"
+  },
+  {
+    "id": "boss_ruin_general_001",
+    "name_key": "boss_ruin_general",
+    "type": "boss",
+    "level": "30",
+    "hp": "36000",
+    "atk": "1600",
+    "def": "920",
+    "traits": "physical_resist|control",
+    "reward_group_id": "drop_b03"
+  },
+  {
+    "id": "boss_underworld_lord_001",
+    "name_key": "boss_underworld_lord",
+    "type": "boss",
+    "level": "40",
+    "hp": "88000",
+    "atk": "3600",
+    "def": "2100",
+    "traits": "poison|high_evasion",
+    "reward_group_id": "drop_b04"
+  },
+  {
+    "id": "boss_celestial_crack_001",
+    "name_key": "boss_celestial_crack",
+    "type": "boss",
+    "level": "50",
+    "hp": "180000",
+    "atk": "8200",
+    "def": "4800",
+    "traits": "burst|magic_resist",
+    "reward_group_id": "drop_b05"
+  }
+]

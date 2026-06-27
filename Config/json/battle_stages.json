@@ -1,0 +1,83 @@
+[
+  {
+    "id": "stage_001",
+    "map_id": "map_01",
+    "node_type": "normal",
+    "monster_group": "monster_spirit_rat_001",
+    "recommend_power": "100",
+    "unlock_condition": "none",
+    "first_reward": "spirit_stone:300"
+  },
+  {
+    "id": "stage_002",
+    "map_id": "map_01",
+    "node_type": "normal",
+    "monster_group": "monster_mine_imp_001",
+    "recommend_power": "220",
+    "unlock_condition": "clear_stage:stage_001",
+    "first_reward": "forge_ore_01:5"
+  },
+  {
+    "id": "stage_005",
+    "map_id": "map_01",
+    "node_type": "elite",
+    "monster_group": "monster_ruin_guard_001",
+    "recommend_power": "650",
+    "unlock_condition": "clear_stage:stage_004",
+    "first_reward": "appraisal_token:1"
+  },
+  {
+    "id": "stage_010",
+    "map_id": "map_01",
+    "node_type": "boss",
+    "monster_group": "boss_mine_spirit_001",
+    "recommend_power": "1800",
+    "unlock_condition": "clear_stage:stage_009",
+    "first_reward": "unlock_map:map_02"
+  },
+  {
+    "id": "stage_011",
+    "map_id": "map_02",
+    "node_type": "normal",
+    "monster_group": "monster_valley_wolf_001",
+    "recommend_power": "2200",
+    "unlock_condition": "clear_stage:stage_010",
+    "first_reward": "spirit_stone:1200"
+  },
+  {
+    "id": "stage_020",
+    "map_id": "map_02",
+    "node_type": "boss",
+    "monster_group": "boss_valley_keeper_001",
+    "recommend_power": "5200",
+    "unlock_condition": "clear_stage:stage_019",
+    "first_reward": "unlock_map:map_03"
+  },
+  {
+    "id": "stage_030",
+    "map_id": "map_03",
+    "node_type": "boss",
+    "monster_group": "boss_ruin_general_001",
+    "recommend_power": "12800",
+    "unlock_condition": "clear_stage:stage_020",
+    "first_reward": "unlock_map:map_04"
+  },
+  {
+    "id": "stage_040",
+    "map_id": "map_04",
+    "node_type": "boss",
+    "monster_group": "boss_underworld_lord_001",
+    "recommend_power": "32000",
+    "unlock_condition": "clear_stage:stage_030",
+    "first_reward": "unlock_map:map_05"
+  },
+  {
+    "id": "stage_050",
+    "map_id": "map_05",
+    "node_type": "boss",
+    "monster_group": "boss_celestial_crack_001",
+    "recommend_power": "76000",
+    "unlock_condition": "clear_stage:stage_040",
+    "first_reward": "spirit_stone:12000"
+  }
+]
