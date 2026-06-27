@@ -1,6 +1,8 @@
 # 挂机放置挖宝游戏项目
 
-这是一个面向商业化研发的挂机放置类挖宝游戏项目仓库。
+这是一个面向商业化研发的 2.5D 微信小游戏挂机挖宝项目仓库。
+
+正式客户端方向：**Cocos Creator + 微信小游戏 + 2.5D 竖屏挂机挖宝**。当前 Web 原型用于快速验证玩法、接口和数值闭环。
 
 ## 文档
 
@@ -8,6 +10,7 @@
 - [MVP 登录、进游戏与主线流程](docs/mvp-login-mainline-flow.md)
 - [MVP 客户端界面与接口对接文档](docs/mvp-client-screen-flow.md)
 - [MVP 研发任务清单](docs/mvp-development-backlog.md)
+- [微信小游戏 2.5D 技术方案](docs/wechat-minigame-2.5d-tech-plan.md)
 
 ## 配置导出
 
@@ -71,3 +74,4 @@ python3 -m http.server 8080
 - 已创建 MVP Web 原型骨架，直接连接本地 Mock API 验证核心循环，并加入主线、新手引导、装备穿戴与境界突破。
 - 已创建一键启动脚本 `Tools/run_mvp_demo.py`，用于同时启动 Mock API 和 Web 原型。
 - 已创建 Web 原型冒烟测试 `Tools/test_web_prototype.py`，用于检查静态页面、配置路径和核心 API 联通。
+- 已确定正式客户端方向为 Cocos Creator 微信小游戏 2.5D，并补充对应技术方案。

@@ -49,3 +49,5 @@
 - Added `Tools/run_mvp_demo.py` to start Mock API and the Web prototype together, choose free local ports, open the browser, and stop both services with Ctrl+C.
 - Starting automated Web prototype smoke test.
 - Added `Tools/test_web_prototype.py` to start isolated API/static servers and validate HTML, CSS, JS, config paths, quest claimability, and reset behavior.
+- Starting WeChat Mini Game 2.5D technical direction update.
+- Added `docs/wechat-minigame-2.5d-tech-plan.md` and updated main docs/backlog to prefer Cocos Creator for the formal client.
