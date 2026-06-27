@@ -1,0 +1,9 @@
+id,name_key,type,quality,stack_limit,use_effect,sell_price
+spirit_stone,item_spirit_stone,currency,common,999999,none,0
+jade,item_jade,premium_currency,rare,999999,none,0
+appraisal_token,item_appraisal_token,consumable,rare,999,use_appraisal,20
+repair_stone_01,item_repair_stone_01,material,common,999,repair_antique,5
+repair_stone_02,item_repair_stone_02,material,rare,999,repair_antique,20
+forge_ore_01,item_forge_ore_01,material,common,999,upgrade_equipment,4
+map_key_01,item_map_key_01,key,rare,99,unlock_stage,50
+treasure_box_01,item_treasure_box_01,box,common,99,open_drop_group:drop_box_01,30

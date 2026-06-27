@@ -1,0 +1,9 @@
+id,type,name_key,target,reward,next_quest_id
+quest_main_001,main,quest_first_dig,dig_count:1,spirit_stone:100,quest_main_002
+quest_main_002,main,quest_first_antique,obtain_antique:1,appraisal_token:1,quest_main_003
+quest_main_003,main,quest_first_appraisal,appraise_antique:1,spirit_stone:300,quest_main_004
+quest_main_004,main,quest_first_equip,equip_item:1,forge_ore_01:3,quest_main_005
+quest_main_005,main,quest_first_battle,clear_stage:stage_001,spirit_stone:500,quest_main_006
+quest_main_006,main,quest_first_realm,upgrade_realm:realm_02,appraisal_token:1,quest_main_007
+quest_daily_001,daily,quest_daily_dig,dig_count:10,spirit_stone:300,none
+quest_daily_002,daily,quest_daily_battle,clear_stage_count:3,forge_ore_01:5,none

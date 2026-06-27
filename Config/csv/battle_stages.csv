@@ -1,0 +1,10 @@
+id,map_id,node_type,monster_group,recommend_power,unlock_condition,first_reward
+stage_001,map_01,normal,monster_spirit_rat_001,100,none,spirit_stone:300
+stage_002,map_01,normal,monster_mine_imp_001,220,clear_stage:stage_001,forge_ore_01:5
+stage_005,map_01,elite,monster_ruin_guard_001,650,clear_stage:stage_004,appraisal_token:1
+stage_010,map_01,boss,boss_mine_spirit_001,1800,clear_stage:stage_009,unlock_map:map_02
+stage_011,map_02,normal,monster_valley_wolf_001,2200,clear_stage:stage_010,spirit_stone:1200
+stage_020,map_02,boss,boss_valley_keeper_001,5200,clear_stage:stage_019,unlock_map:map_03
+stage_030,map_03,boss,boss_ruin_general_001,12800,clear_stage:stage_020,unlock_map:map_04
+stage_040,map_04,boss,boss_underworld_lord_001,32000,clear_stage:stage_030,unlock_map:map_05
+stage_050,map_05,boss,boss_celestial_crack_001,76000,clear_stage:stage_040,spirit_stone:12000

@@ -1,0 +1,7 @@
+id,name_key,quality,base_price,collection_id,repair_cost,can_fake,source_hint
+antique_bronze_mirror_001,antique_bronze_mirror,rare,1200,col_bronze,repair_stone_01:2,true,map_01
+antique_jade_cup_001,antique_jade_cup,epic,3600,col_jade,repair_stone_01:4,true,map_02
+antique_broken_sword_001,antique_broken_sword,legendary,9800,col_weapon,repair_stone_02:3,false,map_03
+antique_spirit_scroll_001,antique_spirit_scroll,epic,5200,col_scroll,repair_stone_02:2,false,map_03
+antique_fake_coin_001,antique_fake_coin,common,180,col_misc,none,true,map_01
+antique_celestial_seal_001,antique_celestial_seal,mythic,32000,col_celestial,repair_stone_02:8,false,map_05

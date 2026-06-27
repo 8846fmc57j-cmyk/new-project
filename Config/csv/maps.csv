@@ -1,0 +1,6 @@
+id,name_key,order,min_realm,base_reward_per_min,drop_group_id,boss_stage_id,unlock_condition
+map_01,map_newbie_mine,1,realm_01,12,drop_map_01,stage_010,none
+map_02,map_spirit_valley,2,realm_02,22,drop_map_02,stage_020,clear_stage:stage_010
+map_03,map_ancient_ruins,3,realm_04,40,drop_map_03,stage_030,clear_stage:stage_020
+map_04,map_underworld_secret,4,realm_07,72,drop_map_04,stage_040,clear_stage:stage_030
+map_05,map_celestial_rift,5,realm_10,120,drop_map_05,stage_050,clear_stage:stage_040

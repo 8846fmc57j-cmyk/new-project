@@ -1,0 +1,10 @@
+id,name_key,type,level,hp,atk,def,traits,reward_group_id
+monster_spirit_rat_001,monster_spirit_rat,normal,1,120,18,4,none,drop_m01
+monster_mine_imp_001,monster_mine_imp,normal,3,260,32,9,high_evasion,drop_m01
+monster_ruin_guard_001,monster_ruin_guard,elite,5,850,95,30,physical_resist,drop_e01
+boss_mine_spirit_001,boss_mine_spirit,boss,10,3200,220,80,burst|poison,drop_b01
+monster_valley_wolf_001,monster_valley_wolf,normal,12,4200,260,110,burst,drop_m02
+boss_valley_keeper_001,boss_valley_keeper,boss,20,12800,720,360,magic_resist|control,drop_b02
+boss_ruin_general_001,boss_ruin_general,boss,30,36000,1600,920,physical_resist|control,drop_b03
+boss_underworld_lord_001,boss_underworld_lord,boss,40,88000,3600,2100,poison|high_evasion,drop_b04
+boss_celestial_crack_001,boss_celestial_crack,boss,50,180000,8200,4800,burst|magic_resist,drop_b05

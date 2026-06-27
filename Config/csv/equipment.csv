@@ -1,0 +1,7 @@
+id,name_key,slot,quality,level_req,main_attr_pool,sub_attr_pool,recycle_reward
+weapon_iron_spade_001,equip_iron_spade,weapon,common,1,atk:20,dig_speed|crit_drop,forge_ore_01:1
+weapon_spirit_pick_001,equip_spirit_pick,weapon,rare,3,atk:55,dig_speed|hit|crit_rate,forge_ore_01:3
+armor_cloth_robe_001,equip_cloth_robe,armor,common,1,hp:120,def|hp|control_resist,forge_ore_01:1
+armor_jade_robe_001,equip_jade_robe,armor,epic,6,hp:520,def|hp|poison_resist,forge_ore_01:5
+ring_copper_001,equip_copper_ring,ring,rare,3,atk:30,crit_rate|crit_drop|aura_bonus,forge_ore_01:2
+amulet_guard_001,equip_guard_amulet,amulet,epic,8,def:75,hp|control_resist|magic_resist,forge_ore_01:5
