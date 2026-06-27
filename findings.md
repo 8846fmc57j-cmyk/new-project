@@ -17,3 +17,5 @@
 - Mock API smoke test command is `python3 Tools/test_mock_api.py`.
 - Client MVP needs a direct playable home screen with current goal, idle rewards, appraisal entry, and battle entry visible immediately.
 - Appraisal and battle screens are P0 because they prove whether the core loop has enough feedback before adding ads or deeper monetization.
+- The next implementation phase should build UI against the Mock API instead of using disconnected fake UI data.
+- Equipment equip and realm breakthrough can stay P1 until the login-home-appraisal-battle loop feels complete.

@@ -7,6 +7,7 @@
 - [挂机放置挖宝游戏技术文档](docs/idle-treasure-game-tech-design.md)
 - [MVP 登录、进游戏与主线流程](docs/mvp-login-mainline-flow.md)
 - [MVP 客户端界面与接口对接文档](docs/mvp-client-screen-flow.md)
+- [MVP 研发任务清单](docs/mvp-development-backlog.md)
 
 ## 配置导出
 
@@ -48,3 +49,4 @@ python3 Tools/test_mock_api.py
 - 已创建 MVP 登录、进入游戏、主线任务和新手引导流程配置。
 - 已创建本地 MVP Mock API 服务，用于客户端先接入完整核心流程。
 - 已创建 MVP 客户端页面与接口对接说明，重点覆盖主界面、鉴宝估价和打怪关卡。
+- 已创建 MVP 研发任务清单，把客户端、接口、配置和验收拆成可执行任务。

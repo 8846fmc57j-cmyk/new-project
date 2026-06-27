@@ -26,6 +26,7 @@
 
 - [MVP 登录、进游戏与主线流程](mvp-login-mainline-flow.md)
 - [MVP 客户端界面与接口对接文档](mvp-client-screen-flow.md)
+- [MVP 研发任务清单](mvp-development-backlog.md)
 
 ### 2.1 核心循环
 
