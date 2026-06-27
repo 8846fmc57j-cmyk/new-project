@@ -25,3 +25,5 @@
 - Starting local Mock API server for guest login, game sync, quest, tutorial, appraisal, and battle smoke testing.
 - Added `Server/mock_api.py`, `Server/README.md`, and `Tools/test_mock_api.py`.
 - Mock API smoke test passes for guest login, game sync, quest claim, tutorial completion, antique appraisal, battle start, battle finish, and idle claim.
+- Starting MVP client screen and API integration specification.
+- Added `docs/mvp-client-screen-flow.md` for startup/login, home, main quest, tutorial, appraisal, battle, and API mapping.

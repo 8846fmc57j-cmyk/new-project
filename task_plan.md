@@ -19,6 +19,7 @@ Build the first MVP development assets for the idle treasure digging game:
 7. Add MVP simulation tooling for drops, appraisal, and combat.
 8. Define login, enter-game, main quest, and tutorial flow.
 9. Add a local mock API server for MVP client/backend flow testing.
+10. Define MVP client screens and API integration behavior.
 
 ## Current Scope
 
@@ -31,6 +32,7 @@ Run the first playable MVP flow locally:
 - Idle reward claim
 - Antique appraisal
 - Battle start and finish
+- Client screen behavior for home, appraisal, and battle
 
 ## Decisions
 
@@ -41,3 +43,4 @@ Run the first playable MVP flow locally:
 - Early simulation tools should be deterministic by default so balance changes are comparable.
 - MVP starts with guest login and automatic profile creation; account binding can come later.
 - Mock API is for local integration only; production backend can later replace it without changing config IDs.
+- Client MVP should start from a functional game screen, not a marketing landing page or empty town hub.

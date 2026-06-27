@@ -15,3 +15,5 @@
 - Mock API should use only Python standard library so the repository stays easy to run on a clean machine.
 - Mock API uses in-memory state and resets on restart, which is acceptable for local MVP client integration.
 - Mock API smoke test command is `python3 Tools/test_mock_api.py`.
+- Client MVP needs a direct playable home screen with current goal, idle rewards, appraisal entry, and battle entry visible immediately.
+- Appraisal and battle screens are P0 because they prove whether the core loop has enough feedback before adding ads or deeper monetization.
