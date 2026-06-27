@@ -94,6 +94,8 @@
 | `/antique/appraise` | 鉴宝 |
 | `/battle/start` | 开始战斗 |
 | `/battle/finish` | 结算战斗 |
+| `/equipment/equip` | 穿戴装备并刷新战力 |
+| `/realm/breakthrough` | 境界突破并扣除材料 |
 
 ## 9. MVP 验收标准
 

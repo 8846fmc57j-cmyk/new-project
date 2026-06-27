@@ -57,6 +57,8 @@ def main() -> None:
         assert quest["next_quest_id"] == "quest_main_002"
         tutorial = request("POST", "/tutorial/complete", {"step_id": "tutorial_001"})
         assert tutorial["next_step_id"] == "tutorial_002"
+        equip = request("POST", "/equipment/equip", {"template_id": "armor_cloth_robe_001"})
+        assert equip["equipped"]["armor"] == "armor_cloth_robe_001"
         appraisal = request("POST", "/antique/appraise", {})
         assert appraisal["antique"]["state"] == "appraised"
         battle = request("POST", "/battle/start", {"stage_id": "stage_001"})
@@ -65,6 +67,8 @@ def main() -> None:
         assert finish["verified_result"] == "win"
         idle = request("POST", "/idle/claim", {})
         assert idle["rewards"][0]["item_id"] == "spirit_stone"
+        realm = request("POST", "/realm/breakthrough", {})
+        assert realm["realm_id"] == "realm_02"
         print("mock_api_smoke=ok")
     finally:
         proc.terminate()

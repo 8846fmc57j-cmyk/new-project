@@ -30,6 +30,7 @@ CONFIG = {
     "antiques": load_config("antiques.json"),
     "battle_stages": load_config("battle_stages.json"),
     "monsters": load_config("monsters.json"),
+    "equipment": load_config("equipment.json"),
 }
 
 QUESTS = {row["id"]: row for row in CONFIG["quests"]}
@@ -37,6 +38,11 @@ TUTORIALS = {row["id"]: row for row in CONFIG["tutorial_steps"]}
 STAGES = {row["id"]: row for row in CONFIG["battle_stages"]}
 MONSTERS = {row["id"]: row for row in CONFIG["monsters"]}
 ANTIQUES = {row["id"]: row for row in CONFIG["antiques"]}
+EQUIPMENT = {row["id"]: row for row in CONFIG["equipment"]}
+REALM_NEXT = {
+    "realm_01": {"next_realm_id": "realm_02", "cost": 200, "power_bonus": 80},
+    "realm_02": {"next_realm_id": "realm_03", "cost": 500, "power_bonus": 150},
+}
 
 STATE: dict[str, dict[str, object]] = {}
 
@@ -65,7 +71,8 @@ def default_player(user_id: str) -> dict[str, object]:
             "forge_ore_01": 0,
             "map_key_01": 0,
         },
-        "equipment": ["weapon_iron_spade_001"],
+        "equipment": ["weapon_iron_spade_001", "armor_cloth_robe_001"],
+        "equipped": {},
         "antiques": [
             {
                 "uid": "antique_10001",
@@ -126,8 +133,17 @@ def player_summary(player: dict[str, object]) -> dict[str, object]:
         "cleared_stages": player["cleared_stages"],
         "idle": player["idle"],
         "equipment": player["equipment"],
+        "equipped": player["equipped"],
         "antiques": player["antiques"],
     }
+
+
+def equipment_power_bonus(template: dict[str, str]) -> int:
+    attr_type, value = template["main_attr_pool"].split(":", 1)
+    amount = int(value)
+    if attr_type == "hp":
+        return amount // 10
+    return amount
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -193,6 +209,51 @@ class Handler(BaseHTTPRequestHandler):
                 completed.append(step_id)
             player["tutorial_step_id"] = step["next_step_id"]
             self.write_json({"step_id": step_id, "next_step_id": step["next_step_id"]})
+            return
+
+        if path == "/equipment/equip":
+            template_id = str(body.get("template_id", "armor_cloth_robe_001"))
+            template = EQUIPMENT.get(template_id)
+            if not template:
+                self.write_error(400, "EQUIPMENT_NOT_FOUND")
+                return
+            owned = player["equipment"]  # type: ignore[assignment]
+            if template_id not in owned:
+                self.write_error(400, "EQUIPMENT_NOT_OWNED")
+                return
+            equipped = player["equipped"]  # type: ignore[assignment]
+            slot = template["slot"]
+            previous_id = equipped.get(slot)
+            if previous_id != template_id:
+                previous = EQUIPMENT.get(str(previous_id)) if previous_id else None
+                if previous:
+                    player["power"] = int(player["power"]) - equipment_power_bonus(previous)
+                equipped[slot] = template_id
+                player["power"] = int(player["power"]) + equipment_power_bonus(template)
+            self.write_json({"equipped": equipped, "power": player["power"]})
+            return
+
+        if path == "/realm/breakthrough":
+            realm_id = str(player["realm_id"])
+            rule = REALM_NEXT.get(realm_id)
+            if not rule:
+                self.write_error(400, "REALM_MAX")
+                return
+            assets = player["assets"]  # type: ignore[assignment]
+            cost = int(rule["cost"])
+            if int(assets.get("spirit_stone", 0)) < cost:
+                self.write_error(400, "NOT_ENOUGH_SPIRIT_STONE")
+                return
+            assets["spirit_stone"] = int(assets.get("spirit_stone", 0)) - cost
+            player["realm_id"] = rule["next_realm_id"]
+            player["power"] = int(player["power"]) + int(rule["power_bonus"])
+            self.write_json(
+                {
+                    "realm_id": player["realm_id"],
+                    "power": player["power"],
+                    "cost": {"item_id": "spirit_stone", "amount": cost},
+                }
+            )
             return
 
         if path == "/idle/claim":

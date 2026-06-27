@@ -22,3 +22,4 @@
 - Browser prototype needs CORS headers from the Mock API because the static client and API run on different local ports.
 - A static Web prototype is the fastest way to validate flow timing and UI states before committing to engine-specific implementation.
 - `/game/sync` should include completed quests, completed tutorials, and cleared stages so the client can drive red dots and guide skipping.
+- Equipment and realm actions can stay deterministic in the Mock API; the value now is validating client flow, not final balance.

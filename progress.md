@@ -37,3 +37,7 @@
 - Error: `Tools/test_mock_api.py` failed while the preview Mock API was already running on port 8787 because it connected to the existing mutated in-memory state. Fix: allow `MOCK_API_PORT` and run the smoke test on isolated port 18787.
 - Starting quest and tutorial progression in the Web prototype.
 - Added tutorial display, tutorial completion action, activity log, and extra sync fields for completed quests, completed tutorials, and cleared stages.
+- Starting equipment equip and realm breakthrough prototype work.
+- Added Mock API endpoints `/equipment/equip` and `/realm/breakthrough`, plus Web prototype panels for wearing starter armor and breaking through to `realm_02`.
+- Fixed Web prototype button state restoration so buttons return to their rule-based enabled/disabled state after API calls.
+- Verified with Playwright: equip raises power from 120 to 132, battle grants 300 spirit stones, and breakthrough changes realm to `realm_02` with 212 power.

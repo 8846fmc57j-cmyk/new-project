@@ -2,7 +2,11 @@ const API_BASE = "http://127.0.0.1:8787";
 
 const labels = {
   realm_01: "炼气一层",
+  realm_02: "炼气二层",
+  realm_03: "炼气三层",
   map_01: "新手矿洞",
+  equip_iron_spade: "新手铁铲",
+  equip_cloth_robe: "粗布道袍",
   quest_first_dig: "第一次挖宝",
   quest_first_antique: "获得未知古物",
   quest_first_appraisal: "第一次鉴宝",
@@ -52,7 +56,7 @@ async function api(method, path, payload) {
 }
 
 async function loadLocalConfig() {
-  const files = ["quests", "maps", "battle_stages", "antiques", "tutorial_steps"];
+  const files = ["quests", "maps", "battle_stages", "antiques", "tutorial_steps", "equipment"];
   const entries = await Promise.all(
     files.map(async (name) => {
       const response = await fetch(`/Config/json/${name}.json`);
@@ -64,14 +68,21 @@ async function loadLocalConfig() {
 
 function setBusy(isBusy) {
   state.busy = isBusy;
-  [
+  const buttonIds = [
     "loginButton",
     "claimQuestButton",
     "completeTutorialButton",
     "claimIdleButton",
     "appraiseButton",
     "battleButton",
-  ].forEach((id) => {
+    "equipButton",
+    "realmButton",
+  ];
+  if (!isBusy && state.player) {
+    render();
+    return;
+  }
+  buttonIds.forEach((id) => {
     const button = $(id);
     if (button) button.disabled = isBusy;
   });
@@ -121,6 +132,7 @@ function render() {
   $("idleText").textContent = map
     ? `挂机中，每分钟基础产出 ${map.base_reward_per_min} 灵石。`
     : "挂机中，每分钟产出灵石。";
+  $("claimIdleButton").disabled = state.busy;
 
   const quest = findById("quests", player.main_quest_id);
   $("questTitle").textContent = quest ? labels[quest.name_key] || quest.name_key : "主线已完成";
@@ -140,6 +152,37 @@ function render() {
 
   renderAntiques();
   renderBattleStage();
+  renderEquipment();
+  renderRealm();
+}
+
+function equipmentName(templateId) {
+  const template = findById("equipment", templateId);
+  return template ? labels[template.name_key] || template.name_key : templateId;
+}
+
+function renderEquipment() {
+  const equipped = state.player.equipped || {};
+  const owned = state.player.equipment || [];
+  const armorId = "armor_cloth_robe_001";
+  const isEquipped = equipped.armor === armorId;
+  $("equipmentState").textContent = isEquipped
+    ? `已穿戴 ${equipmentName(armorId)}，战力已生效。`
+    : owned.includes(armorId)
+      ? `可穿戴 ${equipmentName(armorId)}，提升基础战力。`
+      : "暂无可穿戴防具。";
+  $("equipButton").textContent = isEquipped ? "已穿戴" : "穿戴装备";
+  $("equipButton").disabled = state.busy || isEquipped || !owned.includes(armorId);
+}
+
+function renderRealm() {
+  const realmId = state.player.profile.realm_id;
+  const cost = realmId === "realm_01" ? 200 : 500;
+  $("realmState").textContent =
+    realmId === "realm_01"
+      ? `当前 ${labels[realmId]}，消耗 ${cost} 灵石可突破。`
+      : `当前 ${labels[realmId] || realmId}，后续境界规则待扩展。`;
+  $("realmButton").disabled = state.busy || (state.player.assets.spirit_stone || 0) < cost;
 }
 
 function renderAntiques() {
@@ -150,6 +193,7 @@ function renderAntiques() {
 
   if (antiques.length === 0) {
     list.innerHTML = `<div class="result-box">暂无古物，先去挖宝。</div>`;
+    $("appraiseButton").disabled = true;
     return;
   }
 
@@ -168,6 +212,7 @@ function renderAntiques() {
     });
     list.appendChild(row);
   });
+  $("appraiseButton").disabled = state.busy || !antiques.some((item) => item.state === "unidentified");
 }
 
 function renderBattleStage() {
@@ -175,6 +220,7 @@ function renderBattleStage() {
   if (!stage) return;
   $("stagePower").textContent = stage.recommend_power;
   $("stageReward").textContent = rewardText(stage.first_reward);
+  $("battleButton").disabled = state.busy;
 }
 
 async function login() {
@@ -249,6 +295,32 @@ async function completeTutorial() {
   }
 }
 
+async function equipItem() {
+  try {
+    setBusy(true);
+    const result = await api("POST", "/equipment/equip", { template_id: "armor_cloth_robe_001" });
+    logAction(`装备已穿戴，当前战力 ${result.power}。`);
+    await refreshPlayer();
+  } catch (error) {
+    logAction(`穿戴失败：${error.message}`);
+  } finally {
+    setBusy(false);
+  }
+}
+
+async function breakthroughRealm() {
+  try {
+    setBusy(true);
+    const result = await api("POST", "/realm/breakthrough", {});
+    logAction(`境界突破成功：${labels[result.realm_id] || result.realm_id}，当前战力 ${result.power}。`);
+    await refreshPlayer();
+  } catch (error) {
+    logAction(`突破失败：${error.message}`);
+  } finally {
+    setBusy(false);
+  }
+}
+
 async function appraise() {
   try {
     setBusy(true);
@@ -306,5 +378,7 @@ $("claimQuestButton").addEventListener("click", claimQuest);
 $("completeTutorialButton").addEventListener("click", completeTutorial);
 $("appraiseButton").addEventListener("click", appraise);
 $("battleButton").addEventListener("click", battle);
+$("equipButton").addEventListener("click", equipItem);
+$("realmButton").addEventListener("click", breakthroughRealm);
 
 setStatus("等待启动");

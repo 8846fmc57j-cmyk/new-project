@@ -28,6 +28,8 @@ Supported MVP endpoints:
 - `GET /game/sync`
 - `POST /quest/claim`
 - `POST /tutorial/complete`
+- `POST /equipment/equip`
+- `POST /realm/breakthrough`
 - `POST /idle/claim`
 - `POST /antique/appraise`
 - `POST /battle/start`
