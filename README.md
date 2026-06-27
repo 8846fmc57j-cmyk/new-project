@@ -23,6 +23,20 @@ python3 Tools/simulate_mvp.py --iterations 1000 --seed 20260627
 
 该命令会读取 `Config/json/`，模拟地图掉落、古物鉴宝估价和战斗关卡战力门槛。
 
+## MVP Mock API
+
+```bash
+python3 Server/mock_api.py
+```
+
+本地接口地址为 `http://127.0.0.1:8787`，用于先跑通游客登录、进入游戏、主线任务、新手引导、挂机领取、古物鉴宝和打怪结算。
+
+冒烟测试：
+
+```bash
+python3 Tools/test_mock_api.py
+```
+
 ## 当前阶段
 
 - 已连接 GitHub 远程仓库：`https://github.com/8846fmc57j-cmyk/new-project.git`
@@ -31,3 +45,4 @@ python3 Tools/simulate_mvp.py --iterations 1000 --seed 20260627
 - 已创建配置导出脚本，生成 `Config/json/` 运行时配置和 `manifest.json`。
 - 已创建 MVP 数值模拟脚本，用于早期检查掉落、鉴宝估价和打怪战力。
 - 已创建 MVP 登录、进入游戏、主线任务和新手引导流程配置。
+- 已创建本地 MVP Mock API 服务，用于客户端先接入完整核心流程。

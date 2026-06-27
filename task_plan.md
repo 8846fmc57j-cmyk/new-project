@@ -18,19 +18,19 @@ Build the first MVP development assets for the idle treasure digging game:
 6. Generate runtime JSON configuration files.
 7. Add MVP simulation tooling for drops, appraisal, and combat.
 8. Define login, enter-game, main quest, and tutorial flow.
+9. Add a local mock API server for MVP client/backend flow testing.
 
 ## Current Scope
 
-Create first-pass configuration data for:
+Run the first playable MVP flow locally:
 
-- Items
-- Maps
-- Drops
-- Antiques
-- Monsters
-- Battle stages
-- Equipment
-- Quests
+- Guest login
+- Enter game and sync profile
+- Main quest claim
+- Tutorial step completion
+- Idle reward claim
+- Antique appraisal
+- Battle start and finish
 
 ## Decisions
 
@@ -40,3 +40,4 @@ Create first-pass configuration data for:
 - CSV files are edited by planning/design; JSON files are generated runtime artifacts for client/server.
 - Early simulation tools should be deterministic by default so balance changes are comparable.
 - MVP starts with guest login and automatic profile creation; account binding can come later.
+- Mock API is for local integration only; production backend can later replace it without changing config IDs.

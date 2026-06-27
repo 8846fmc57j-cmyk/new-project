@@ -22,3 +22,6 @@
 - Added login/mainline flow document.
 - Expanded main quest chain through the first daily-task handoff.
 - Added `tutorial_steps.csv` for the first 12 guided steps.
+- Starting local Mock API server for guest login, game sync, quest, tutorial, appraisal, and battle smoke testing.
+- Added `Server/mock_api.py`, `Server/README.md`, and `Tools/test_mock_api.py`.
+- Mock API smoke test passes for guest login, game sync, quest claim, tutorial completion, antique appraisal, battle start, battle finish, and idle claim.

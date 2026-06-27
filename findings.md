@@ -12,3 +12,6 @@
 - Battle power ratios from the first simulation are intentionally slightly forgiving in early maps.
 - Login/mainline flow is documented in `docs/mvp-login-mainline-flow.md`.
 - Tutorial configuration is stored in `Config/csv/tutorial_steps.csv` and exported to `Config/json/tutorial_steps.json`.
+- Mock API should use only Python standard library so the repository stays easy to run on a clean machine.
+- Mock API uses in-memory state and resets on restart, which is acceptable for local MVP client integration.
+- Mock API smoke test command is `python3 Tools/test_mock_api.py`.
