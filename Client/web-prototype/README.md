@@ -35,3 +35,12 @@ Supported flow:
 - Tutorial completion
 - Antique appraisal
 - Battle start and finish
+- Equipment equip
+- Realm breakthrough
+- Demo reset
+
+Smoke test:
+
+```bash
+python3 Tools/test_web_prototype.py
+```

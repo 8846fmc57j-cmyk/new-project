@@ -47,3 +47,5 @@
 - Added `/dev/reset` and a Web prototype reset button so demo state can be restarted without restarting the Mock API.
 - Starting one-command demo launcher.
 - Added `Tools/run_mvp_demo.py` to start Mock API and the Web prototype together, choose free local ports, open the browser, and stop both services with Ctrl+C.
+- Starting automated Web prototype smoke test.
+- Added `Tools/test_web_prototype.py` to start isolated API/static servers and validate HTML, CSS, JS, config paths, quest claimability, and reset behavior.

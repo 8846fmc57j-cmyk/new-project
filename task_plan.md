@@ -27,6 +27,7 @@ Build the first MVP development assets for the idle treasure digging game:
 15. Add server-side main quest completion checks.
 16. Add local demo reset tooling.
 17. Add one-command MVP demo launcher.
+18. Add automated Web prototype smoke test.
 
 ## Current Scope
 
@@ -47,6 +48,7 @@ Run the first playable MVP flow locally:
 - Server-side quest target validation and claimable state
 - Local reset flow for repeated prototype testing
 - One-command launcher for Mock API and Web prototype
+- Automated smoke test for static Web prototype and API wiring
 
 ## Decisions
 
