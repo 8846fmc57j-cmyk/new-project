@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 import time
@@ -12,7 +13,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE_URL = "http://127.0.0.1:8787"
+TEST_PORT = "18787"
+BASE_URL = f"http://127.0.0.1:{TEST_PORT}"
 
 
 def request(method: str, path: str, payload: dict[str, object] | None = None) -> dict[str, object]:
@@ -40,6 +42,7 @@ def main() -> None:
     proc = subprocess.Popen(
         [sys.executable, str(ROOT / "Server" / "mock_api.py")],
         cwd=str(ROOT),
+        env={**os.environ, "MOCK_API_PORT": TEST_PORT},
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=True,

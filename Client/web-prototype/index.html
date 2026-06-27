@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>挂机挖宝 MVP 原型</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231d7f5d'/%3E%3Cpath d='M18 42h28v8H18zM32 10l14 20H18z' fill='%23f3d27a'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar">
+        <div>
+          <p class="eyebrow">MVP 研发版</p>
+          <h1>挂机挖宝</h1>
+        </div>
+        <div class="status-pill" id="connectionStatus">未连接</div>
+      </section>
+
+      <section class="hero-panel" id="loginPanel">
+        <div>
+          <p class="eyebrow">启动链路</p>
+          <h2>游客登录与存档同步</h2>
+          <p class="body-text">启动 Mock API 后点击进入游戏，原型会读取配置、游客登录并同步玩家状态。</p>
+        </div>
+        <button class="primary-action" id="loginButton">进入游戏</button>
+      </section>
+
+      <section class="game-layout hidden" id="gamePanel">
+        <aside class="profile-panel">
+          <div class="avatar">修</div>
+          <h2 id="nickname">道友</h2>
+          <p id="realm">境界 realm_01</p>
+          <div class="stat-grid">
+            <div>
+              <span>战力</span>
+              <strong id="power">0</strong>
+            </div>
+            <div>
+              <span>灵石</span>
+              <strong id="spiritStone">0</strong>
+            </div>
+            <div>
+              <span>玉</span>
+              <strong id="jade">0</strong>
+            </div>
+            <div>
+              <span>鉴宝符</span>
+              <strong id="token">0</strong>
+            </div>
+          </div>
+        </aside>
+
+        <section class="main-panel">
+          <div class="quest-strip">
+            <div>
+              <p class="eyebrow">当前主线</p>
+              <h2 id="questTitle">加载中</h2>
+              <p id="questTarget">等待同步</p>
+            </div>
+            <button id="claimQuestButton">领取主线</button>
+          </div>
+
+          <div class="dig-site">
+            <div class="mine-visual">
+              <div class="mine-depth"></div>
+              <div class="spade"></div>
+            </div>
+            <div>
+              <p class="eyebrow">当前地图</p>
+              <h2 id="mapName">新手矿洞</h2>
+              <p class="body-text" id="idleText">挂机中，每分钟产出灵石。</p>
+              <button class="primary-action" id="claimIdleButton">领取挂机收益</button>
+            </div>
+          </div>
+
+          <div class="content-grid">
+            <article class="feature-panel" id="appraisalPanel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">鉴宝估价</p>
+                  <h3>未知古物</h3>
+                </div>
+                <span class="red-dot" id="appraisalDot"></span>
+              </div>
+              <div id="antiqueList" class="item-list"></div>
+              <div class="result-box" id="appraisalResult">选择未鉴定古物后点击鉴定。</div>
+              <button id="appraiseButton">鉴定古物</button>
+            </article>
+
+            <article class="feature-panel" id="battlePanel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">打怪关卡</p>
+                  <h3>矿洞巡守</h3>
+                </div>
+                <span class="stage-tag">stage_001</span>
+              </div>
+              <div class="battle-card">
+                <div>
+                  <span>推荐战力</span>
+                  <strong id="stagePower">100</strong>
+                </div>
+                <div>
+                  <span>首通奖励</span>
+                  <strong id="stageReward">灵石 x300</strong>
+                </div>
+              </div>
+              <div class="battle-bars">
+                <label>我方</label>
+                <div><span id="heroHp"></span></div>
+                <label>妖兽</label>
+                <div><span id="monsterHp"></span></div>
+              </div>
+              <div class="result-box" id="battleResult">选择挑战，完成一次自动战斗。</div>
+              <button id="battleButton">挑战关卡</button>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -8,6 +8,12 @@ Run:
 python3 Server/mock_api.py
 ```
 
+Optional custom port:
+
+```bash
+MOCK_API_PORT=18787 python3 Server/mock_api.py
+```
+
 Base URL:
 
 ```text

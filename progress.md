@@ -29,3 +29,9 @@
 - Added `docs/mvp-client-screen-flow.md` for startup/login, home, main quest, tutorial, appraisal, battle, and API mapping.
 - Starting MVP development backlog so the next build step is executable.
 - Added `docs/mvp-development-backlog.md` with milestones, client tasks, Mock API tasks, config tasks, and validation criteria.
+- Starting runnable MVP Web prototype for fast client-flow validation.
+- Added `Client/web-prototype` with login, home, idle claim, appraisal, and battle panels.
+- Added CORS support to `Server/mock_api.py` so the browser prototype can call the local API.
+- Verified the Web prototype through Playwright: page loads, guest login succeeds, appraisal updates antique state, and battle finish grants spirit stones.
+- Playwright screenshot command was invoked with the wrong output argument format; no screenshot artifact is required for this commit.
+- Error: `Tools/test_mock_api.py` failed while the preview Mock API was already running on port 8787 because it connected to the existing mutated in-memory state. Fix: allow `MOCK_API_PORT` and run the smoke test on isolated port 18787.

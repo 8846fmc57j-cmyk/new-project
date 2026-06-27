@@ -19,3 +19,5 @@
 - Appraisal and battle screens are P0 because they prove whether the core loop has enough feedback before adding ads or deeper monetization.
 - The next implementation phase should build UI against the Mock API instead of using disconnected fake UI data.
 - Equipment equip and realm breakthrough can stay P1 until the login-home-appraisal-battle loop feels complete.
+- Browser prototype needs CORS headers from the Mock API because the static client and API run on different local ports.
+- A static Web prototype is the fastest way to validate flow timing and UI states before committing to engine-specific implementation.

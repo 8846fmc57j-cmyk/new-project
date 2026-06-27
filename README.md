@@ -39,6 +39,17 @@ python3 Server/mock_api.py
 python3 Tools/test_mock_api.py
 ```
 
+## MVP Web 原型
+
+先启动 Mock API，再启动静态原型：
+
+```bash
+python3 Server/mock_api.py
+python3 -m http.server 8080
+```
+
+浏览器打开 `http://127.0.0.1:8080/Client/web-prototype/`，可体验游客登录、主界面、挂机领取、鉴宝估价和打怪结算。
+
 ## 当前阶段
 
 - 已连接 GitHub 远程仓库：`https://github.com/8846fmc57j-cmyk/new-project.git`
@@ -50,3 +61,4 @@ python3 Tools/test_mock_api.py
 - 已创建本地 MVP Mock API 服务，用于客户端先接入完整核心流程。
 - 已创建 MVP 客户端页面与接口对接说明，重点覆盖主界面、鉴宝估价和打怪关卡。
 - 已创建 MVP 研发任务清单，把客户端、接口、配置和验收拆成可执行任务。
+- 已创建 MVP Web 原型骨架，直接连接本地 Mock API 验证核心循环。
