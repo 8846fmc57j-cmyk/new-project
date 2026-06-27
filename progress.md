@@ -18,3 +18,7 @@
 - Re-ran simulation through temp files successfully.
 - Current battle estimated/recommended power ratios are mostly between 0.8 and 1.0, acceptable for early MVP tuning.
 - Current appraisal median prices show a large spread between common, rare, epic, legendary, and mythic antiques, which supports the intended jackpot feeling.
+- Starting login, enter-game, main quest, and tutorial flow definition.
+- Added login/mainline flow document.
+- Expanded main quest chain through the first daily-task handoff.
+- Added `tutorial_steps.csv` for the first 12 guided steps.

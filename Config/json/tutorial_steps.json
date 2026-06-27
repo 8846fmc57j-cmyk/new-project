@@ -1,0 +1,110 @@
+[
+  {
+    "id": "tutorial_001",
+    "order": "1",
+    "trigger": "on_enter_game",
+    "focus_ui": "ui_dig_button",
+    "complete_condition": "dig_count:1",
+    "next_step_id": "tutorial_002",
+    "skip_condition": "quest_completed:quest_main_001"
+  },
+  {
+    "id": "tutorial_002",
+    "order": "2",
+    "trigger": "on_obtain_antique",
+    "focus_ui": "ui_antique_button",
+    "complete_condition": "open_panel:antique",
+    "next_step_id": "tutorial_003",
+    "skip_condition": "quest_completed:quest_main_002"
+  },
+  {
+    "id": "tutorial_003",
+    "order": "3",
+    "trigger": "on_open_antique",
+    "focus_ui": "ui_appraise_button",
+    "complete_condition": "appraise_antique:1",
+    "next_step_id": "tutorial_004",
+    "skip_condition": "quest_completed:quest_main_003"
+  },
+  {
+    "id": "tutorial_004",
+    "order": "4",
+    "trigger": "on_appraise_done",
+    "focus_ui": "ui_sell_or_collect_button",
+    "complete_condition": "resolve_antique:1",
+    "next_step_id": "tutorial_005",
+    "skip_condition": "quest_completed:quest_main_003"
+  },
+  {
+    "id": "tutorial_005",
+    "order": "5",
+    "trigger": "on_reward_equipment",
+    "focus_ui": "ui_equipment_button",
+    "complete_condition": "equip_item:1",
+    "next_step_id": "tutorial_006",
+    "skip_condition": "quest_completed:quest_main_004"
+  },
+  {
+    "id": "tutorial_006",
+    "order": "6",
+    "trigger": "on_equipped",
+    "focus_ui": "ui_battle_button",
+    "complete_condition": "clear_stage:stage_001",
+    "next_step_id": "tutorial_007",
+    "skip_condition": "quest_completed:quest_main_005"
+  },
+  {
+    "id": "tutorial_007",
+    "order": "7",
+    "trigger": "on_battle_fail_or_win",
+    "focus_ui": "ui_upgrade_hint",
+    "complete_condition": "view_growth_tip:1",
+    "next_step_id": "tutorial_008",
+    "skip_condition": "quest_completed:quest_main_005"
+  },
+  {
+    "id": "tutorial_008",
+    "order": "8",
+    "trigger": "on_stage_005_unlocked",
+    "focus_ui": "ui_elite_stage",
+    "complete_condition": "clear_stage:stage_005",
+    "next_step_id": "tutorial_009",
+    "skip_condition": "quest_completed:quest_main_006"
+  },
+  {
+    "id": "tutorial_009",
+    "order": "9",
+    "trigger": "on_realm_ready",
+    "focus_ui": "ui_realm_upgrade_button",
+    "complete_condition": "upgrade_realm:realm_02",
+    "next_step_id": "tutorial_010",
+    "skip_condition": "quest_completed:quest_main_007"
+  },
+  {
+    "id": "tutorial_010",
+    "order": "10",
+    "trigger": "on_boss_unlocked",
+    "focus_ui": "ui_boss_stage",
+    "complete_condition": "clear_stage:stage_010",
+    "next_step_id": "tutorial_011",
+    "skip_condition": "quest_completed:quest_main_008"
+  },
+  {
+    "id": "tutorial_011",
+    "order": "11",
+    "trigger": "on_return_after_idle",
+    "focus_ui": "ui_offline_reward_button",
+    "complete_condition": "claim_offline_reward:1",
+    "next_step_id": "tutorial_012",
+    "skip_condition": "quest_completed:quest_main_009"
+  },
+  {
+    "id": "tutorial_012",
+    "order": "12",
+    "trigger": "on_daily_unlocked",
+    "focus_ui": "ui_daily_quest",
+    "complete_condition": "complete_daily:1",
+    "next_step_id": "none",
+    "skip_condition": "quest_completed:quest_main_010"
+  }
+]

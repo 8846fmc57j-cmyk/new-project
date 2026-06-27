@@ -39,8 +39,13 @@
     },
     {
       "file": "quests.json",
-      "rows": 8,
-      "sha256": "9e64b4537330bb0a8eaee9138400a674a47c3cade36fdbdab1351a9cf25b4e44"
+      "rows": 12,
+      "sha256": "ede6142c135319f2db96a4aaa2782ccc5be33bacf564e5566ee20633732c1025"
+    },
+    {
+      "file": "tutorial_steps.json",
+      "rows": 12,
+      "sha256": "43aac7c5475abca2be9e84c359a1490bd740285f5a26ecaecc58dc96387c93ea"
     }
   ]
 }

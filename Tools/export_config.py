@@ -67,6 +67,25 @@ def validate(configs: dict[str, list[dict[str, str]]]) -> None:
         if row["boss_stage_id"] not in stage_ids:
             raise ValueError(f"unknown boss_stage_id: {row['boss_stage_id']}")
 
+    quest_ids = ids["quests.csv"]
+    for row in configs["quests.csv"]:
+        next_quest_id = row["next_quest_id"]
+        if next_quest_id != "none" and next_quest_id not in quest_ids:
+            raise ValueError(f"unknown next_quest_id: {next_quest_id}")
+
+    if "tutorial_steps.csv" in configs:
+        tutorial_ids = ids["tutorial_steps.csv"]
+        for row in configs["tutorial_steps.csv"]:
+            next_step_id = row["next_step_id"]
+            if next_step_id != "none" and next_step_id not in tutorial_ids:
+                raise ValueError(f"unknown next_step_id: {next_step_id}")
+            for field_name in ("skip_condition", "complete_condition"):
+                condition = row[field_name]
+                if condition.startswith("quest_completed:"):
+                    quest_id = condition.split(":", 1)[1]
+                    if quest_id not in quest_ids:
+                        raise ValueError(f"unknown tutorial quest reference: {quest_id}")
+
 
 def write_json(name: str, rows: list[dict[str, str]]) -> dict[str, str | int]:
     out_path = JSON_DIR / name.replace(".csv", ".json")

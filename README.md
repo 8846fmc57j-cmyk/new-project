@@ -5,6 +5,7 @@
 ## 文档
 
 - [挂机放置挖宝游戏技术文档](docs/idle-treasure-game-tech-design.md)
+- [MVP 登录、进游戏与主线流程](docs/mvp-login-mainline-flow.md)
 
 ## 配置导出
 
@@ -29,3 +30,4 @@ python3 Tools/simulate_mvp.py --iterations 1000 --seed 20260627
 - 已创建首批 MVP 配置表模板，位于 `Config/csv/`，覆盖道具、地图、掉落、古物、怪物、战斗关卡、装备和任务。
 - 已创建配置导出脚本，生成 `Config/json/` 运行时配置和 `manifest.json`。
 - 已创建 MVP 数值模拟脚本，用于早期检查掉落、鉴宝估价和打怪战力。
+- 已创建 MVP 登录、进入游戏、主线任务和新手引导流程配置。

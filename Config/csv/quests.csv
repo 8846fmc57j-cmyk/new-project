@@ -4,6 +4,10 @@ quest_main_002,main,quest_first_antique,obtain_antique:1,appraisal_token:1,quest
 quest_main_003,main,quest_first_appraisal,appraise_antique:1,spirit_stone:300,quest_main_004
 quest_main_004,main,quest_first_equip,equip_item:1,forge_ore_01:3,quest_main_005
 quest_main_005,main,quest_first_battle,clear_stage:stage_001,spirit_stone:500,quest_main_006
-quest_main_006,main,quest_first_realm,upgrade_realm:realm_02,appraisal_token:1,quest_main_007
+quest_main_006,main,quest_first_elite,clear_stage:stage_005,appraisal_token:1,quest_main_007
+quest_main_007,main,quest_first_realm,upgrade_realm:realm_02,spirit_stone:800,quest_main_008
+quest_main_008,main,quest_first_boss,clear_stage:stage_010,map_key_01:1,quest_main_009
+quest_main_009,main,quest_first_offline_reward,claim_offline_reward:1,appraisal_token:1,quest_main_010
+quest_main_010,main,quest_first_daily,complete_daily:1,jade:10,none
 quest_daily_001,daily,quest_daily_dig,dig_count:10,spirit_stone:300,none
 quest_daily_002,daily,quest_daily_battle,clear_stage_count:3,forge_ore_01:5,none

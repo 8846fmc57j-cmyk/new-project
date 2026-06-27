@@ -10,3 +10,5 @@
 - Generated JSON files are committed because they are useful for early client/server prototyping.
 - MVP simulation command is `python3 Tools/simulate_mvp.py --iterations 1000 --seed 20260627`.
 - Battle power ratios from the first simulation are intentionally slightly forgiving in early maps.
+- Login/mainline flow is documented in `docs/mvp-login-mainline-flow.md`.
+- Tutorial configuration is stored in `Config/csv/tutorial_steps.csv` and exported to `Config/json/tutorial_steps.json`.

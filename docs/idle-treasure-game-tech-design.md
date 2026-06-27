@@ -22,6 +22,10 @@
 
 ## 2. 玩法概述
 
+补充文档：
+
+- [MVP 登录、进游戏与主线流程](mvp-login-mainline-flow.md)
+
 ### 2.1 核心循环
 
 ```text

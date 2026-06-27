@@ -42,10 +42,42 @@
   {
     "id": "quest_main_006",
     "type": "main",
-    "name_key": "quest_first_realm",
-    "target": "upgrade_realm:realm_02",
+    "name_key": "quest_first_elite",
+    "target": "clear_stage:stage_005",
     "reward": "appraisal_token:1",
     "next_quest_id": "quest_main_007"
+  },
+  {
+    "id": "quest_main_007",
+    "type": "main",
+    "name_key": "quest_first_realm",
+    "target": "upgrade_realm:realm_02",
+    "reward": "spirit_stone:800",
+    "next_quest_id": "quest_main_008"
+  },
+  {
+    "id": "quest_main_008",
+    "type": "main",
+    "name_key": "quest_first_boss",
+    "target": "clear_stage:stage_010",
+    "reward": "map_key_01:1",
+    "next_quest_id": "quest_main_009"
+  },
+  {
+    "id": "quest_main_009",
+    "type": "main",
+    "name_key": "quest_first_offline_reward",
+    "target": "claim_offline_reward:1",
+    "reward": "appraisal_token:1",
+    "next_quest_id": "quest_main_010"
+  },
+  {
+    "id": "quest_main_010",
+    "type": "main",
+    "name_key": "quest_first_daily",
+    "target": "complete_daily:1",
+    "reward": "jade:10",
+    "next_quest_id": "none"
   },
   {
     "id": "quest_daily_001",
