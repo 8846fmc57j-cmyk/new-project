@@ -16,6 +16,7 @@ Build the first MVP development assets for the idle treasure digging game:
 4. Commit and sync changes to GitHub.
 5. Add CSV validation and JSON export tooling.
 6. Generate runtime JSON configuration files.
+7. Add MVP simulation tooling for drops, appraisal, and combat.
 
 ## Current Scope
 
@@ -36,3 +37,4 @@ Create first-pass configuration data for:
 - Appraisal and combat are core MVP systems.
 - Config IDs use stable English identifiers; display text should go through localization keys.
 - CSV files are edited by planning/design; JSON files are generated runtime artifacts for client/server.
+- Early simulation tools should be deterministic by default so balance changes are comparable.

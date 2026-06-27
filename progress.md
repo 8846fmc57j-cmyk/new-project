@@ -11,3 +11,10 @@
 - Added `Tools/export_config.py`.
 - Generated JSON runtime configs under `Config/json/`.
 - Manifest contains row counts and SHA-256 hashes for each generated JSON file.
+- Starting MVP simulation tooling for validating drop rewards, appraisal price spread, and battle power gates.
+- Added first version of `Tools/simulate_mvp.py`.
+- Simulation ran successfully with deterministic JSON output.
+- Error: attempted to pipe simulator JSON into an inline Python script that also used a heredoc, so stdin was consumed by the script body instead of the JSON. Fix is to write the simulation output to a temp file before parsing it.
+- Re-ran simulation through temp files successfully.
+- Current battle estimated/recommended power ratios are mostly between 0.8 and 1.0, acceptable for early MVP tuning.
+- Current appraisal median prices show a large spread between common, rare, epic, legendary, and mythic antiques, which supports the intended jackpot feeling.
