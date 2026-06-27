@@ -200,6 +200,7 @@ h3 {
 }
 
 .quest-strip,
+.guide-strip,
 .dig-site,
 .panel-header,
 .battle-card {
@@ -210,11 +211,13 @@ h3 {
 }
 
 .quest-strip,
+.guide-strip,
 .dig-site {
   border-bottom: 1px solid var(--line);
   padding-bottom: 18px;
 }
 
+.guide-strip,
 .dig-site {
   padding-top: 18px;
 }
@@ -326,6 +329,17 @@ h3 {
   line-height: 1.5;
 }
 
+.activity-log {
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--muted);
+  background: #fbfcfa;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 .battle-card {
   margin: 14px 0;
 }
@@ -363,6 +377,7 @@ h3 {
 @media (max-width: 860px) {
   .hero-panel,
   .quest-strip,
+  .guide-strip,
   .dig-site,
   .panel-header,
   .battle-card {
@@ -380,4 +395,3 @@ h3 {
     min-width: 0;
   }
 }
-

@@ -35,3 +35,5 @@
 - Verified the Web prototype through Playwright: page loads, guest login succeeds, appraisal updates antique state, and battle finish grants spirit stones.
 - Playwright screenshot command was invoked with the wrong output argument format; no screenshot artifact is required for this commit.
 - Error: `Tools/test_mock_api.py` failed while the preview Mock API was already running on port 8787 because it connected to the existing mutated in-memory state. Fix: allow `MOCK_API_PORT` and run the smoke test on isolated port 18787.
+- Starting quest and tutorial progression in the Web prototype.
+- Added tutorial display, tutorial completion action, activity log, and extra sync fields for completed quests, completed tutorials, and cleared stages.

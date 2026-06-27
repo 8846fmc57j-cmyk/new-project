@@ -13,6 +13,18 @@ const labels = {
   quest_first_boss: "击败首领",
   quest_first_offline_reward: "第一次离线收益",
   quest_first_daily: "开启日常",
+  tutorial_001: "完成第一次挖宝",
+  tutorial_002: "打开鉴宝入口",
+  tutorial_003: "完成第一次鉴宝",
+  tutorial_004: "处理鉴宝结果",
+  tutorial_005: "查看装备入口",
+  tutorial_006: "完成第一次打怪",
+  tutorial_007: "查看成长提示",
+  tutorial_008: "挑战精英关卡",
+  tutorial_009: "完成境界突破",
+  tutorial_010: "挑战首领",
+  tutorial_011: "领取离线收益",
+  tutorial_012: "开启日常任务",
   antique_bronze_mirror: "青铜古镜",
 };
 
@@ -40,7 +52,7 @@ async function api(method, path, payload) {
 }
 
 async function loadLocalConfig() {
-  const files = ["quests", "maps", "battle_stages", "antiques"];
+  const files = ["quests", "maps", "battle_stages", "antiques", "tutorial_steps"];
   const entries = await Promise.all(
     files.map(async (name) => {
       const response = await fetch(`/Config/json/${name}.json`);
@@ -55,6 +67,7 @@ function setBusy(isBusy) {
   [
     "loginButton",
     "claimQuestButton",
+    "completeTutorialButton",
     "claimIdleButton",
     "appraiseButton",
     "battleButton",
@@ -85,6 +98,10 @@ function rewardText(reward) {
     .join("，");
 }
 
+function logAction(text) {
+  $("activityLog").textContent = text;
+}
+
 function render() {
   const player = state.player;
   if (!player) return;
@@ -108,6 +125,18 @@ function render() {
   const quest = findById("quests", player.main_quest_id);
   $("questTitle").textContent = quest ? labels[quest.name_key] || quest.name_key : "主线已完成";
   $("questTarget").textContent = quest ? `目标 ${quest.target}，奖励 ${rewardText(quest.reward)}` : "进入自由循环";
+  $("claimQuestButton").textContent = quest ? "领取主线" : "主线完成";
+  $("claimQuestButton").disabled = state.busy || !quest;
+
+  const tutorial = findById("tutorial_steps", player.tutorial_step_id);
+  $("tutorialTitle").textContent = tutorial
+    ? labels[tutorial.id] || tutorial.id
+    : "引导已完成";
+  $("tutorialTarget").textContent = tutorial
+    ? `聚焦 ${tutorial.focus_ui}，完成条件 ${tutorial.complete_condition}`
+    : "玩家已经进入自由循环。";
+  $("completeTutorialButton").textContent = tutorial ? "完成引导" : "引导完成";
+  $("completeTutorialButton").disabled = state.busy || !tutorial;
 
   renderAntiques();
   renderBattleStage();
@@ -163,6 +192,7 @@ async function login() {
     setStatus("同步存档");
     state.player = await api("GET", "/game/sync");
     setStatus("已连接");
+    logAction("登录成功，已同步存档。");
     render();
   } catch (error) {
     setStatus(`失败 ${error.message}`, false);
@@ -181,6 +211,7 @@ async function claimIdle() {
     setBusy(true);
     const result = await api("POST", "/idle/claim", {});
     $("idleText").textContent = `领取成功：${rewardText(result.rewards.map((item) => `${item.item_id}:${item.amount}`).join("|"))}`;
+    logAction(`挂机收益已领取：${result.rewards.map((item) => `${item.item_id} x${item.amount}`).join("，")}`);
     await refreshPlayer();
   } catch (error) {
     $("idleText").textContent = `领取失败：${error.message}`;
@@ -195,9 +226,24 @@ async function claimQuest() {
     const questId = state.player.main_quest_id;
     const result = await api("POST", "/quest/claim", { quest_id: questId });
     $("questTarget").textContent = `已领取：${result.rewards.map((item) => `${item.item_id} x${item.amount}`).join("，")}`;
+    logAction(`主线 ${questId} 已领取，下一步 ${result.next_quest_id}。`);
     await refreshPlayer();
   } catch (error) {
     $("questTarget").textContent = `领取失败：${error.message}`;
+  } finally {
+    setBusy(false);
+  }
+}
+
+async function completeTutorial() {
+  try {
+    setBusy(true);
+    const stepId = state.player.tutorial_step_id;
+    const result = await api("POST", "/tutorial/complete", { step_id: stepId });
+    logAction(`引导 ${stepId} 已完成，下一步 ${result.next_step_id}。`);
+    await refreshPlayer();
+  } catch (error) {
+    logAction(`引导推进失败：${error.message}`);
   } finally {
     setBusy(false);
   }
@@ -210,6 +256,7 @@ async function appraise() {
     await new Promise((resolve) => setTimeout(resolve, 650));
     const result = await api("POST", "/antique/appraise", {});
     $("appraisalResult").textContent = `估价完成：${result.antique.final_price} 灵石，结果 ${result.result_type}`;
+    logAction(`鉴宝完成：${result.antique.template_id}，估价 ${result.antique.final_price} 灵石。`);
     await refreshPlayer();
   } catch (error) {
     $("appraisalResult").textContent = `鉴定失败：${error.message}`;
@@ -226,6 +273,7 @@ async function battle() {
     await animateBattle();
     const result = await api("POST", "/battle/finish", { stage_id: "stage_001" });
     $("battleResult").textContent = `胜利：${rewardText(result.rewards.map((item) => `${item.item_id}:${item.amount}`).join("|"))}`;
+    logAction(`战斗胜利：${result.stage_id}，获得 ${result.rewards.map((item) => `${item.item_id} x${item.amount}`).join("，")}。`);
     await refreshPlayer();
   } catch (error) {
     $("battleResult").textContent = `战斗失败：${error.message}`;
@@ -255,6 +303,7 @@ async function animateBattle() {
 $("loginButton").addEventListener("click", login);
 $("claimIdleButton").addEventListener("click", claimIdle);
 $("claimQuestButton").addEventListener("click", claimQuest);
+$("completeTutorialButton").addEventListener("click", completeTutorial);
 $("appraiseButton").addEventListener("click", appraise);
 $("battleButton").addEventListener("click", battle);
 
