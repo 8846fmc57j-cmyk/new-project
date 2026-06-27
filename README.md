@@ -6,6 +6,7 @@
 
 ## 文档
 
+- [项目长期上下文](PROJECT_CONTEXT.md)
 - [挂机放置挖宝游戏技术文档](docs/idle-treasure-game-tech-design.md)
 - [MVP 登录、进游戏与主线流程](docs/mvp-login-mainline-flow.md)
 - [MVP 客户端界面与接口对接文档](docs/mvp-client-screen-flow.md)

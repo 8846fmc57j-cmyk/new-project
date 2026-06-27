@@ -51,3 +51,5 @@
 - Added `Tools/test_web_prototype.py` to start isolated API/static servers and validate HTML, CSS, JS, config paths, quest claimability, and reset behavior.
 - Starting WeChat Mini Game 2.5D technical direction update.
 - Added `docs/wechat-minigame-2.5d-tech-plan.md` and updated main docs/backlog to prefer Cocos Creator for the formal client.
+- Starting persistent project context update so future compressed sessions can resume without relying on chat history.
+- Added `PROJECT_CONTEXT.md` and linked it from `README.md`.

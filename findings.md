@@ -28,3 +28,4 @@
 - A launcher script reduces setup mistakes because the demo currently needs both the API service and static web server.
 - Web prototype smoke testing should verify both static assets and API state transitions because either side can break the demo.
 - Formal client should be Cocos Creator WeChat Mini Game with 2.5D scene presentation; the current Web prototype remains a validation surface.
+- `PROJECT_CONTEXT.md` is the durable project memory file and should be read before continuing future development after chat compression.

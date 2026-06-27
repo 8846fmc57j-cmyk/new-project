@@ -29,6 +29,7 @@ Build the first MVP development assets for the idle treasure digging game:
 17. Add one-command MVP demo launcher.
 18. Add automated Web prototype smoke test.
 19. Define WeChat Mini Game 2.5D technical direction.
+20. Add persistent project context for compressed chat continuity.
 
 ## Current Scope
 
@@ -51,6 +52,7 @@ Run the first playable MVP flow locally:
 - One-command launcher for Mock API and Web prototype
 - Automated smoke test for static Web prototype and API wiring
 - WeChat Mini Game 2.5D technical plan and Cocos Creator direction
+- Persistent project context file for continuing work after chat compression
 
 ## Decisions
 
@@ -64,3 +66,4 @@ Run the first playable MVP flow locally:
 - Client MVP should start from a functional 2.5D game screen, not a marketing landing page or empty town hub.
 - First playable build should prioritize real UI-to-Mock-API integration over visual polish.
 - Web prototype is a validation surface; the formal client direction is Cocos Creator WeChat Mini Game.
+- `PROJECT_CONTEXT.md` is the first file to read when continuing after chat compression.
