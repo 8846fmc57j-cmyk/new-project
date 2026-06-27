@@ -2,7 +2,13 @@
 
 This is a lightweight browser prototype for the MVP flow. It connects to the local Mock API and is meant for product and engineering validation before a Unity or Cocos implementation.
 
-Run the Mock API:
+Run both services from the repository root:
+
+```bash
+python3 Tools/run_mvp_demo.py
+```
+
+Or run the Mock API manually:
 
 ```bash
 python3 Server/mock_api.py

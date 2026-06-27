@@ -26,6 +26,7 @@ Build the first MVP development assets for the idle treasure digging game:
 14. Add equipment equip and realm breakthrough to the Web prototype.
 15. Add server-side main quest completion checks.
 16. Add local demo reset tooling.
+17. Add one-command MVP demo launcher.
 
 ## Current Scope
 
@@ -45,6 +46,7 @@ Run the first playable MVP flow locally:
 - Equipment equip and realm breakthrough actions in the browser prototype
 - Server-side quest target validation and claimable state
 - Local reset flow for repeated prototype testing
+- One-command launcher for Mock API and Web prototype
 
 ## Decisions
 

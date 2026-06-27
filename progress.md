@@ -45,3 +45,5 @@
 - Added quest target validation in Mock API so main quest rewards can only be claimed after the matching action is completed.
 - Starting local prototype reset tooling.
 - Added `/dev/reset` and a Web prototype reset button so demo state can be restarted without restarting the Mock API.
+- Starting one-command demo launcher.
+- Added `Tools/run_mvp_demo.py` to start Mock API and the Web prototype together, choose free local ports, open the browser, and stop both services with Ctrl+C.

@@ -41,7 +41,13 @@ python3 Tools/test_mock_api.py
 
 ## MVP Web 原型
 
-先启动 Mock API，再启动静态原型：
+一键启动：
+
+```bash
+python3 Tools/run_mvp_demo.py
+```
+
+或手动启动 Mock API 和静态原型：
 
 ```bash
 python3 Server/mock_api.py
@@ -62,3 +68,4 @@ python3 -m http.server 8080
 - 已创建 MVP 客户端页面与接口对接说明，重点覆盖主界面、鉴宝估价和打怪关卡。
 - 已创建 MVP 研发任务清单，把客户端、接口、配置和验收拆成可执行任务。
 - 已创建 MVP Web 原型骨架，直接连接本地 Mock API 验证核心循环，并加入主线、新手引导、装备穿戴与境界突破。
+- 已创建一键启动脚本 `Tools/run_mvp_demo.py`，用于同时启动 Mock API 和 Web 原型。
